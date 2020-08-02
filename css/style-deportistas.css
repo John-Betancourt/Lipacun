@@ -1,0 +1,108 @@
+/*body {
+	font-family: 'Raleway', sans-serif;
+	font-weight: bold;
+	color: black;
+	/*color:#6f6f6f;
+	font-size: 15px;
+	position: relative;
+   }*/
+   /*.main-page-wrapper { overflow-x:hidden; }*/
+/* General */
+   BODY {font-family: verdana, arial, sans-serif; font-size: 10pt; background: black;}
+
+/* Contenido */
+   H1 {font-size: 20pt; font-weight: bold; color: rgb(0, 92, 184);}
+   H2 {font-size: 13pt; font-weight: bold; font-style: italic; color: black;}
+   H3 {font-size: 12pt; font-weight: bold; color: black;}
+   
+/* Formulario */
+	FORM P {clear: left; margin: 0.2em; padding: 0.2em;}
+	FORM P LABEL {float: left; width: 28%; font-weight: bold;text-align: left;}
+	INPUT, SELECT {float: left;}
+
+	FORM.borde{
+		border: 1px dotted #0066CC;
+		padding: 0.8em 0.8em 4.0em 0.8em; width: 70%;
+		-webkit-border-radius: 0px 0px 15px 15px;
+		-moz-border-radius: 15px;
+		background:#DCDCDC;	}
+
+	.panel-heading {
+		border: 1px dotted #0066CC;
+   		padding: 1em 0.5em 1em 0.5em; width: 70%;
+   		-webkit-border-radius: 15px 15px 0px 0px;
+		-moz-border-radius: 15px;
+		text-align: left;
+		margin: 0.25em 0.0em 0em 0.0em;
+		background:rgb(235, 202, 19); }
+
+	.h1 { font-size: 1.5vw; }
+
+	LABEL {
+		width:60px;
+		float:left;
+		font-size:12px;
+		line-height:24px;
+		font-weight:bold; }
+	
+	SELECT {
+		width:27vw;
+	    margin-bottom:5px;
+	    line-height:18px;
+	    padding:5px 5px;
+	    -webkit-border-radius: 5px;
+	    -moz-border-radius: 5px;
+	    border-radius: 5px;
+	    border:1px solid ;
+	    margin: 0.0em 0.0em 1em; }
+
+	.Corto {
+	    width:27vw;
+	    margin-bottom:5px;
+	    line-height:18px;
+	    padding:5px 5px;
+	    -webkit-border-radius: 5px;
+	    -moz-border-radius: 5px;
+	    border-radius: 5px;
+	    border:1px solid ;
+	    margin: 0.0em 0.0em 1em; }
+
+.label {
+	margin: 1.5em 3.0em;
+	padding:6px 30px;
+	color: #fff;
+	border-radius: 8px;
+	font-weight:bold; }
+
+.label-info {
+	background-color: #009efb;	
+	border-color: #009efb;
+	/*border-color: #08F;*/ }
+
+.label-info:hover {
+    backface-visibility: visible;
+	background-color: #07F;
+	border-color: #fff; }
+
+.label-danger {
+	background-color: rgb(146, 158, 167);
+	border-color: rgb(146, 158, 167);
+	color:rgb(255, 50, 50); }
+
+.label-danger:hover {
+	backface-visibility: visible;
+	background-color: #f62d51;
+	/*background: #333333;*/
+	border-color: #fff;
+	color: #fff; }
+
+.label-custom {
+	background-color: #01c0c8;
+	border-color: #01c0c8; }
+
+.label-custom:hover {
+	backface-visibility: visible;
+	background-color: #36bea6;
+	border-color: #fff; }
+
+.error {color: red;}
