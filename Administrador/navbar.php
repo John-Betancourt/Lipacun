@@ -45,7 +45,7 @@
       ?>
       <!-- Notificationes -->
       <li class="nav-item dropdown">
-              <a href="#"  class="nav-link dropdown-toggle" data-toggle="dropdown" >
+              <a href="#"  class="nav-link" data-toggle="dropdown" >
               <button type="button" class="btn btn-danger">
                 Notificaciones <span class="badge badge-light"><?php echo $cuantas['estado']; ?></span>
               </button>
