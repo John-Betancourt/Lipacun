@@ -46,7 +46,7 @@
 					<td><?php $Apellidos = $row['primer_apellido'].' '.$row['segundo_apellido']; echo $Apellidos ?></td>
 					<td><center><?php echo $row['edad'] ?></center></td>
 					<td><center><a href="#" onClick="BajaDeportista('<?php echo $row['identificacion'] ?>')"><span class="label label-danger">Dar Baja</span></a></center></td>
-					<td><center><a href="Información_Deportista.php?Deportista=<?php echo $row['identificacion'] ?>"><span class="label label-primary">Ver</span></a></center></td>
+					<td><center><a href="Informacion_Deportista.php?Deportista=<?php echo $row['identificacion'] ?>"><span class="label label-primary">Ver</span></a></center></td>
 				</tr>
 			<?php
 				$No +=1;
@@ -60,7 +60,7 @@
 					<td><?php $Apellidos = $row['primer_apellido'].' '.$row['segundo_apellido']; echo $Apellidos ?></td>
 					<td><center><?php echo $row['edad'] ?></center></td>
 					<td><center><a href="#" onClick="BajaDeportista('<?php echo $row['identificacion'] ?>')"><span class="label label-danger">Dar Baja</span></a></center></td>
-					<td><center><a href="Información_Deportista.php?Deportista=<?php echo $row['identificacion'] ?>"><span class="label label-primary">Ver</span></a></center></td>
+					<td><center><a href="Informacion_Deportista.php?Deportista=<?php echo $row['identificacion'] ?>"><span class="label label-primary">Ver</span></a></center></td>
 				</tr>
 			<?php
 				$No +=1;

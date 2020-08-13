@@ -64,7 +64,7 @@
 										<td><?php echo $row['nombre_completo_club'] ?></td>
 										<td><?php $Nombres = $row['nombres'].' '.$row['apellidos']; echo $Nombres ?></td>
 										<td><center><?php echo $row1['municipio'] ?></center></td>
-										<td><center><a href="Información_Club.php?Club=<?php echo $row['nombre_corto_club'] ?>"><span class="label label-primary">Ver</span></a></center></td>
+										<td><center><a href="Informacion_Club.php?Club=<?php echo $row['nombre_corto_club'] ?>"><span class="label label-primary">Ver</span></a></center></td>
 										<td><center><a href="Lista_Deportistas.php?Club=<?php echo $row['nombre_corto_club'] ?>"><span class="label label-primary">Ver</span></a></center></td>
 									</tr>
 								<?php

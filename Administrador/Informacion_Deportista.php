@@ -53,7 +53,7 @@
 					</ol>
 				</div>
 				<div class="card text-left">
-					<h5 class="card-header" style="background: linear-gradient(to right, #E0EAFC, #CFDEF3);">
+					<h5 class="card-header" style="background: linear-gradient(to right, #4286f4, #4286f4);">
 						<center><strong>Información Deportista <?php echo $Nombres;?></strong></center>
 					</h5>
 					<div class="card-body" style="background: linear-gradient(to right, #E0EAFC, #CFDEF3);">

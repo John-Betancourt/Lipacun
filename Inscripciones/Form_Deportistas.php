@@ -126,7 +126,7 @@
 										
 					<div class="form-row">
 						<div class="form-group col-md-3">
-							<label for="Patin"><strong>Tipo de Patin:</strong></label>
+							<label for="Patin"><strong>Tipo de Patin:</strong> <i class="fas fa-skating"></i></label>
 							<span style= "color: red">*</span>
 							<div class="Tipo_Patin" name="Tipo_Patin" id="Tipo_Patin"></div>
 							
@@ -195,7 +195,7 @@
 							<button class="btn btn-primary" type="submit" name="enviar">Enviar Formulario</button>
 						</div>
 						<div class="form-group col-md-3">
-							<button class="btn btn-success" onclick="history.back()">Salir</button>
+							<button class="btn btn-success" onclick="history.back()">Volver</button>
 						</div>
 					</div>
 					
