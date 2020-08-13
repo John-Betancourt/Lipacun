@@ -50,8 +50,8 @@
 			<div class="footer-container">
 				<div class="footer-main">
 					<div class="footer-columna">
-						<a href="../Inscripciones/Deportistas.php"><button class="botones"><i><img src="../imagenes/iconos/add-user-male--v1.png"/></i></button></a>
-						<a href="../Inscripciones/Deportistas.php"><h3>Incribir a nuevo deportista</h3></a><hr><!--fa fa-user-->
+						<a href="../Inscripciones/Form_Deportistas.php"><button class="botones"><i><img src="../imagenes/iconos/add-user-male--v1.png"/></i></button></a>
+						<a href="../Inscripciones/Form_Deportistas.php"><h3>Incribir a nuevo deportista</h3></a><hr><!--fa fa-user-->
 					</div><br>
 
 					<div class="footer-columna">

@@ -42,102 +42,104 @@
 	
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-11">
+			<div class="col-sm-12">
 				<div class="justify-content-end align-items-center"><!--d-flex -->
-					<ol class="breadcrumb">
+					<ol class="breadcrumb" style="background: linear-gradient(to right, #E0EAFC, #CFDEF3);">
 						<li class="breadcrumb-item"><a href="Index.php">Pagina Principal</a></li>
 						<li class="breadcrumb-item"><a href="Lista_Clubes.php">Lista de Clubes</a></li>
 						<li class="breadcrumb-item active">Información del Club</li>
 					</ol>
 				</div>
 				<div class="card text-left">
-					<h5 class="card-header">
-						<center>Información Club <?php echo $Club; ?></center>
+					<h5 class="card-header" style="background: linear-gradient(to right, #E0EAFC, #CFDEF3);">
+						<center><strong>Información Club <?php echo $Club; ?></strong></center>
 					</h5>
-					<div class="card-body">
+					<div class="card-body" style="background: linear-gradient(to right, #E0EAFC, #CFDEF3);">
 						<form action="Actualizar_Club.php" method="POST">
-							<div class="form-group">
-								<label class="col-sm-12">Departamento</label>
-								<div class="col-sm-12">
+							<div class="form-row">
+								<div class="form-group col-md-6">
+									<label for="Departamento"><strong>Departamento:</strong></label>
+									<i class="fas fa-city"></i>
 									<select class="form-control form-control-line" readonly name="Departamento">
 										<?php echo '<option value="'.$row1['departamento'].'" selected>'.$row1['departamento'].'</option>'; ?>
 									</select>
 								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-sm-12">Ciudad</label>
-								<div class="col-sm-12">
+								<div class="form-group col-md-6">
+									<label for="Ciudad"><strong>Ciudad:</strong></label>
+									<i class="fas fa-university"></i>
 									<select class="form-control form-control-line" name="ciudad" value="<?php echo $row1['id_municipio']?>">
-									<?php
-										$query = $mysqli -> query ("select * FROM municipios WHERE departamento_id = 25");//select * FROM municipios_cundinamarca where id_municipio !=1101  
-										while ($valores = mysqli_fetch_array($query)) {
-											if($row1['id_municipio']==$valores['id_municipio']){
-											echo '<option value="'.$valores['id_municipio'].'" selected>'.$valores['municipio'].'</option>';          
-	
-											}else{
-											echo '<option value="'.$valores['id_municipio'].'">'.$valores['municipio'].'</option>';          
-											}										
-										}
-									?>
+										<?php
+											$query = $mysqli -> query ("select * FROM municipios WHERE departamento_id = 25");//select * FROM municipios_cundinamarca where id_municipio !=1101  
+											while ($valores = mysqli_fetch_array($query)) {
+												if($row1['id_municipio']==$valores['id_municipio']){
+												echo '<option value="'.$valores['id_municipio'].'" selected>'.$valores['municipio'].'</option>';          
+		
+												}else{
+												echo '<option value="'.$valores['id_municipio'].'">'.$valores['municipio'].'</option>';          
+												}										
+											}
+										?>
 									</select>
 								</div>
 							</div>
+
 							<div class="form-group">
-								<label class="col-md-12">Nombre Completo Club</label>
+								<label class="col-md-12"><strong>Nombre Completo Club:</strong></label>
 								<div class="col-md-12">
 									<input type="text" placeholder="" name="nombre_club" value="<?php echo $row1['nombre_completo_club']?>" class="form-control form-control-line">
 								</div>
 							</div>
-							<div class="form-group">
-								<label class="col-md-12">Nombre(s) Representante</label>
-								<div class="col-md-12">
+
+							<div class="form-row">
+								<div class="form-group col-md-6">
+									<label for="Nombres"><strong>Nombre(s) Respresentante:</strong></label>
 									<input type="text" placeholder="" name="nombres_representante" value="<?php echo $row1['nombres']?>" class="form-control form-control-line">
 								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-md-12">Apellidos Representante</label>
-								<div class="col-md-12">
+								<div class="form-group col-md-6">
+									<label for="Apellidos"><strong>Apellido(s) Respresentante:</strong></label>
 									<input type="text" placeholder="" name="apellidos_representante" value="<?php echo $row1['apellidos']?>" class="form-control form-control-line">
 								</div>
 							</div>
-							<div class="form-group">
-								<label class="col-md-12">Identificación</label>
-								<div class="col-md-12">
+
+							<div class="form-row">
+								<div class="form-group col-md-6">
+									<label for="Identificacion"><strong>Identificación:</strong></label>
+									<i class="far fa-address-card"></i>
 									<input type="number" minlength="6" name="identificacion" maxlength="11" value="<?php echo $row1['identificacion']?>" class="form-control form-control-line">
 								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-md-12">Titulo o Cargo</label>
-								<div class="col-md-12">
+								<div class="form-group col-md-6">
+									<label for="Cargo"><strong>Titulo o Cargo:</strong></label>
 									<select class="form-control form-control-line" name="cargo" value="<?php echo $row1['cargo']?>">
-									<?php
-										$query = $mysqli -> query ("select * FROM cargo");//select * FROM cargo
-										while ($valores = mysqli_fetch_array($query)) {
-											if($row1['id']==$valores['id']){
-												echo '<option value="'.$row1['id'].'" selected>'.$valores['cargo'].'</option>';
-											}else{
-												echo '<option value="'.$valores['id'].'">'.$valores['cargo'].'</option>';
+										<?php
+											$query = $mysqli -> query ("select * FROM cargo");//select * FROM cargo
+											while ($valores = mysqli_fetch_array($query)) {
+												if($row1['id']==$valores['id']){
+													echo '<option value="'.$row1['id'].'" selected>'.$valores['cargo'].'</option>';
+												}else{
+													echo '<option value="'.$valores['id'].'">'.$valores['cargo'].'</option>';
+												}
 											}
-										}
-									?>
+										?>
 									</select>
 								</div>
 							</div>
-							<div class="form-group">
-								<label class="col-md-12">Telefono</label>
-								<div class="col-md-12">
+
+							<div class="form-row">
+								<div class="form-group col-md-6">
+									<label for="Email"><strong>Email:</strong></label>
+									<i class="far fa-envelope"></i>
+									<input type="email"  placeholder="Ej. example@gmail.com" name="email" value="<?php echo $row1['email']?>" class="form-control form-control-line"  id="example-email">
+								</div>
+								<div class="form-group col-md-6">
+									<label for="Telefono"><strong>Telefono:</strong></label>
+									<i class="fas fa-mobile-alt"></i>
 									<input type="number" size="10" placeholder="" name="telefono" value="<?php echo $row1['telefono']?>" class="form-control form-control-line">
 								</div>
 							</div>
-							<div class="form-group">
-								<label for="example-email" class="col-md-12">Correo</label>
-								<div class="col-md-12">
-									<input type="email"  placeholder="Ej. example@gmail.com" name="email" value="<?php echo $row1['email']?>" class="form-control form-control-line"  id="example-email">
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-sm-12">Reconocimiento</label>
-								<div class="col-sm-12">
+
+							<div class="form-row">
+								<div class="form-group col-md-2">
+									<label for="Reconocimiento"><strong>Reconocimiento:</strong></label>
 									<select class="form-control form-control-line" name="reconocimiento" id="reconocimiento" value="<?php echo $row1['reconocimiento'] ?>" onchange="hideReconocimiento(this.value)">
 										<?php
 											$query = $mysqli -> query ("SELECT * FROM reconocimiento");
@@ -151,23 +153,23 @@
 										?>
 									</select>
 								</div>
-							</div>
-							<div class="Reconocimiento" style="display:none">
-								<div class="form-group">
-									<label class="col-md-12">No. Reconocimiento</label>
-									<div class="col-md-12">
+
+								<div class="form-group col-md-5">
+									<div class="Reconocimiento" style="display:none">
+										<label for="No_Reconocimiento"><strong>No Reconocimiento:</strong></label>
 										<input type="number" size="10" placeholder="" name="numero_reconocimiento" value="<?php echo $row1['no_reconocimiento']?>" class="form-control form-control-line">
 									</div>
 								</div>
-								<div class="form-group">
-									<label class="col-md-12">Fecha Reconocimiento</label>
-									<div class="col-md-12">
+								<div class="form-group col-md-5">
+									<div class="Reconocimiento" style="display:none">
+										<label for="Fecha_Reconocimiento"><strong>Fecha Reconocimiento:</strong> </label>
 										<input type="date" name="fecha_reconocimiento" value="<?php echo $row1['fecha_reconocimiento']?>" class="form-control form-control-line" min="2013-01-01" max="<?php echo date("Y-m-d");?>" onchange="calcular(this.value)">
 									</div>
 								</div>
 							</div>
+
 							<div class="form-group">
-								<label class="col-md-12">Nombre Corto Club</label>
+								<label class="col-md-12"><strong>Nombre Corto Club:</strong></label>
 								<div class="col-md-12">
 									<input type="text" name="club" value="<?php echo $row1['nombre_corto_club']?>" class="form-control form-control-line" readonly>
 								</div>
@@ -175,11 +177,11 @@
 
 							<div class="form-row">
 								<div class="form-group col-md-6">
-								  <label class="col-md-12" for="inputPassword4" >Contraseña</label>
-								  <input type="password" name="password" value="<?php echo $row1['clave']?>" class="form-control col-md-12" id="inputPassword4" readonly style="margin: 0px 15px;">
+								  <label for="inputPassword4" ><strong>Contraseña:</strong> <i class="fas fa-unlock-alt"></i></label>
+								  <input type="password" name="password" value="<?php echo $row1['clave']?>" class="form-control col-md-12" id="inputPassword4" readonly>
 								</div>
 								<div class="form-group col-md-6">
-								  <label class="col-md-12" for="inputAccion4">Acción</label><br>
+								  <label class="col-md-12" for="inputAccion4"><strong>Acción:</strong></label><br>
 								  <input type="submit" class="btn btn-primary mb-2" formaction="Restablecer_Contraseña.php?Club=<?php echo $row1['nombre_corto_club']?>" value="Restablecer Contraseña" id="inputAccion4" style="margin: 0px 15px;">
 								</div>
 							</div>

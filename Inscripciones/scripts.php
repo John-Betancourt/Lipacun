@@ -16,10 +16,11 @@
 	<link rel="stylesheet" type="text/css" href="../librerias/alertify/css/themes/bootstrap.css">
 
 	<!-- Main style sheet -->
-	<link rel="stylesheet" type="text/css" href="../css/style-clubes.css">
+	<link rel="stylesheet" type="text/css" href="../css/index.css">
+	<!-- <link rel="stylesheet" type="text/css" href="../css/style-clubes.css"> -->
 	<!-- responsive style sheet -->
 	<link rel="stylesheet" type="text/css" href="../css/responsive.css">
-
+	
 	<!-- jQuery library -->
 	<script src="../librerias/jquery.min.js"></script>
 	<script src="../librerias/jquery-3.4.1.js"></script>
@@ -32,16 +33,19 @@
 	<script src="../librerias/alertify/alertify.js"></script>
 
 	<!-- Main -->
+	<script src="https://kit.fontawesome.com/a2b401d9df.js" crossorigin="anonymous"></script>
 	<script src="../js/main-clubes.js"></script>
+	<script src="../js/main-deportistas.js"></script>
 	<script src="../js/Caracteres.js"></script>
 
 	<!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
     <!-- ============================================================== -->
-    <div class="preloader">
+    <!-- <div class="preloader">
         <div class="loader">
             <div class="loader__figure"></div>
             <p class="loader__label">Cargando Plataforma LIPACUN</p>
         </div>
-    </div>
+	</div> -->
+	
     

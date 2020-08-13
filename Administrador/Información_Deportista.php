@@ -43,9 +43,9 @@
 	</center>
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-11">
+			<div class="col-sm-12">
 				<div class="justify-content-end align-items-center"><!--d-flex -->
-					<ol class="breadcrumb">
+					<ol class="breadcrumb" style="background: linear-gradient(to right, #E0EAFC, #CFDEF3);">
 						<li class="breadcrumb-item"><a href="Index.php">Pagina Principal</a></li>
 						<li class="breadcrumb-item"><a href="Lista_Clubes.php">Lista Clubes</a></li>
 						<li class="breadcrumb-item"><a href="#"><span onclick="history.back()">Lista Deportistas</span></a></li>
@@ -53,102 +53,83 @@
 					</ol>
 				</div>
 				<div class="card text-left">
-					<h5 class="card-header">
-						<center>Información Deportista <?php echo $Nombres;?></center>
+					<h5 class="card-header" style="background: linear-gradient(to right, #E0EAFC, #CFDEF3);">
+						<center><strong>Información Deportista <?php echo $Nombres;?></strong></center>
 					</h5>
-					<div class="card-body">
+					<div class="card-body" style="background: linear-gradient(to right, #E0EAFC, #CFDEF3);">
 						<form action="Actualizar_Deportistas.php" method="POST">
-							<div class="form-group">
-								<label class="col-sm-12">Tipo de Identificación</label>
-								<div class="col-sm-12">
+
+							<div class="form-row">
+								<div class="form-group col-md-6">
+									<label><strong>Tipo de Identificación:</strong></label>
+									<i class="far fa-address-card"></i>
 									<input type="text" name="tipo_identificacion" minlength="6" maxlength="11" value="<?php echo $row1['tipo_identificacion']?>" class="form-control form-control-line" readonly>
 								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-md-12">Identificación</label>
-								<div class="col-md-12">
-									<input type="number" name="identificacion" minlength="6" maxlength="11" value="<?php echo $row1['identificacion']?>" class="form-control form-control-line" readonly>
+								<div class="form-group col-md-6">
+									 <label><strong>Identificación:</strong></label>
+									 <i class="far fa-address-card"></i>
+									 <input type="number" name="identificacion" minlength="6" maxlength="11" value="<?php echo $row1['identificacion']?>" class="form-control form-control-line" readonly>
 								</div>
 							</div>
-							<div class="form-group">
-								<label class="col-md-12">Primer Nombre</label>
-								<div class="col-md-12">
+
+							<div class="form-row">
+								<div class="form-group col-md-6">
+									<label><strong>Primer Nombre:</strong></label>
 									<input type="text" placeholder="Ingresa aquí el primer nombre" name="primer_nombre" value="<?php echo $row1['primer_nombre']?>" class="form-control form-control-line">
 								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-md-12">Segundo Nombre</label>
-								<div class="col-md-12">
+								<div class="form-group col-md-6">
+									<label><strong>Segundo Nombre:</strong></label>
 									<input type="text" placeholder="Ingresa aquí el segundo nombre" name="segundo_nombre" value="<?php echo $row1['segundo_nombre']?>" class="form-control form-control-line">
 								</div>
 							</div>
-							<div class="form-group">
-								<label class="col-md-12">Primer Apellido</label>
-								<div class="col-md-12">
+
+							<div class="form-row">
+								<div class="form-group col-md-6">
+									<label><strong>Primer Apellido:</strong></label>
 									<input type="text" placeholder="Ingresa aquí el primer apellido" name="primer_apellido" value="<?php echo $row1['primer_apellido']?>" class="form-control form-control-line">
 								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-md-12">Segundo Apellido</label>
-								<div class="col-md-12">
+								<div class="form-group col-md-6">
+									<label><strong>Segundo Apellido:</strong></label>
 									<input type="text" placeholder="Ingresa aquí el segundo apellido" name="segundo_apellido" value="<?php echo $row1['segundo_apellido']?>" class="form-control form-control-line">
 								</div>
 							</div>
+							
 							<div class="form-group">
-								<label class="col-md-12">Nombre Corto de CLub y/o Escuela</label>
-								<div class="col-md-12">
+								<label class="col-md-6"><strong>Nombre Corto de CLub y/o Escuela:</strong></label>
+								<div class="col-md-6">
 									<input type="text" placeholder="Ej. Administrador Web" value="<?php echo $row1['nombre_corto_club']?>" class="form-control form-control-line" readonly>
 								</div>
 							</div>
+
 							<div class="form-group">
-								<label class="col-md-12">Fecha de Nacimiento</label>
-								<div class="col-md-12">
-									<input type="date" name="fecha_nacimiento" value="<?php echo $row1['fecha_nacimiento']?>" class="form-control form-control-line">
+								<label class="col-md-6"><strong>Fecha de Nacimiento:</strong> <i class="far fa-calendar-alt"></i></label>
+								<div class="col-md-6">
+									<input type="date" name="fecha_nacimiento" max="<?php echo date('Y-m-d')?>" value="<?php echo $row1['fecha_nacimiento']?>" class="form-control form-control-line">
 								</div>
 							</div>
 
 							<div class="form-group">
-							<label class="col-sm-12">Tipo de Patín</label>
-							<div class="col-sm-12">
-								<select class="form-control form-control-line" name="tipo_patin" id="tipo_patin" onchange="hidePatin(this.value)" value="<?php echo $row1['tipo_patin']?>">
-									
-									<?php
-										$query = $mysqli -> query ("SELECT * FROM tipo_patin ORDER BY id ASC");//select * FROM tipo de patin  
-										while ($valores1 = mysqli_fetch_array($query)) {
-											if($row1['tipo_patin']== $valores1['tipo_patin']){
-												echo '<option value="'.$valores1['tipo_patin'].'" selected>'.$valores1['tipo_patin'].'</option>';
-											}else{
-												echo '<option value="'.$valores1['tipo_patin'].'">'.$valores1['tipo_patin'].'</option>';          
+								<label class="col-sm-6"><strong>Tipo de Patín:</strong> <i class="fas fa-skating"></i></label>
+								<div class="col-sm-6">
+									<select class="form-control form-control-line" name="tipo_patin" id="tipo_patin" onchange="hidePatin(this.value)" value="<?php echo $row1['tipo_patin']?>">
+										<?php
+											$query = $mysqli -> query ("SELECT * FROM tipo_patin ORDER BY id ASC");//select * FROM tipo de patin  
+											while ($valores1 = mysqli_fetch_array($query)) {
+												if($row1['tipo_patin']== $valores1['tipo_patin']){
+													echo '<option value="'.$valores1['tipo_patin'].'" selected>'.$valores1['tipo_patin'].'</option>';
+												}else{
+													echo '<option value="'.$valores1['tipo_patin'].'">'.$valores1['tipo_patin'].'</option>';          
+												}
 											}
-										}
-										?>	
-								</select>
-							</div>
-							</div>
-							
-							<div class="form-group">
-							<label class="col-sm-12">Rama</label>
-							<div class="col-sm-12">
-								<select class="form-control form-control-line" name="rama"  value="<?php echo $row1['rama']?>" >
-									
-									<?php
-										$query = $mysqli -> query ("SELECT * FROM rama ORDER BY id ASC"); 
-										while ($valores1 = mysqli_fetch_array($query)) {
-											if($row1['rama']== $valores1['rama']){
-												echo '<option value="'.$valores1['id'].'" selected>'.$valores1['rama'].'</option>';
-											}else{
-												echo '<option value="'.$valores1['id'].'">'.$valores1['rama'].'</option>';          
-											}
-										}
-										?>	
-								</select>
-							</div>
+											?>	
+									</select>
+								</div>
 							</div>
 
-							<div class="form-group">
-								<div class="Ligado" style="display:none">
-									<label class="col-sm-12">Ligado</label>
-									<div class="col-sm-12">
+							<div class="form-row">
+								<div class="form-group col-md-2">
+									<div class="Ligado" style="display:none">
+										<label for="ligado"><strong>Ligado:</strong></label>
 										<select class="form-control form-control-line" name="ligado" id="ligado" value="<?php echo $row1['id']?>" onchange="hideLigado(this.value)">
 										<?php
 											$query = $mysqli -> query ("select * FROM ligado");//select * FROM ligado
@@ -163,23 +144,36 @@
 										</select>
 									</div>
 								</div>
-							</div>
-								
-							<div class="form-group">
-								<div class="Cundinamarca" style="display:none">
-									<div class="form-group">
-										<label class="col-md-12">Fecha de Afiliación</label>
-										<div class="col-md-12">
-											<input type="date" name="fecha_afiliacion"  min="2005-01-01" max="<?php echo date("Y-m-d"); ?>" value="<?php echo $row1['fecha_afiliacion']?>" class="form-control form-control-line">
-										</div>
-									</div>
 
-									<div class="form-group">
-										<label class="col-md-12">Fecha de Renovación</label>
-										<div class="col-md-12">
-											<input type="date" name="fecha_renovacion" min="2019-01-01" max="<?php echo date("Y-m-d"); ?>" value="<?php echo $row1['fecha_renovacion']?>" class="form-control form-control-line">
-										</div>
+								<div class="form-group col-md-5">
+									<div class="Cundinamarca" style="display:none">
+										<label for="Afiliacion"><strong>Fecha Afiliación:</strong></label>
+										<input type="date" name="fecha_afiliacion"  min="2005-01-01" max="<?php echo date("Y-m-d"); ?>" value="<?php echo $row1['fecha_afiliacion']?>" class="form-control form-control-line">
 									</div>
+								</div>		
+								<div class="form-group col-md-5">
+									<div class="Cundinamarca" style="display:none">
+										<label for="Renovacion"><strong>Fecha Renovación:</strong></label>
+										<input type="date" name="fecha_renovacion" min="2019-01-01" max="<?php echo date("Y-m-d"); ?>" value="<?php echo $row1['fecha_renovacion']?>" class="form-control form-control-line">
+									</div>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-sm-6"><strong>Rama:</label>
+								<div class="col-sm-6">
+									<select class="form-control form-control-line" name="rama"  value="<?php echo $row1['rama']?>" >
+										<?php
+											$query = $mysqli -> query ("SELECT * FROM rama ORDER BY id ASC"); 
+											while ($valores1 = mysqli_fetch_array($query)) {
+												if($row1['rama']== $valores1['rama']){
+													echo '<option value="'.$valores1['id'].'" selected>'.$valores1['rama'].'</option>';
+												}else{
+													echo '<option value="'.$valores1['id'].'">'.$valores1['rama'].'</option>';          
+												}
+											}
+											?>	
+									</select>
 								</div>
 							</div>
 							<hr>
@@ -190,7 +184,7 @@
 							</div>
 						</form>
 					</div>
-					<div class="card-footer text-muted">
+					<div class="card-footer text-muted" style="background: linear-gradient(to right, #E0EAFC, #CFDEF3);">
 						<center>LIPACUN | Copyright <?php auto_copyright(); // Current year?> Todos los derechos reservados | By Brian y John</center>
 					</div>
 				</div>

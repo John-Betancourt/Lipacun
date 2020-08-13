@@ -35,7 +35,7 @@
 		$fecha_min = $ano_min."-".date("m-d");
 		$fecha_max = $ano_max."-".$mes_max."-".$dia_actual;
 	}
-	$html = "<input class='Nacimiento Corto' TYPE='date' NAME='Nacimiento' min='$fecha_min' max='$fecha_max' onChange='FechaNacimiento(this.value)' required>";
+	$html = "<input class='Nacimiento form-control' TYPE='date' NAME='Nacimiento' min='$fecha_min' max='$fecha_max' onChange='FechaNacimiento(this.value)' required>";
 	echo $html;
 ?>
 <!-- Main -->
