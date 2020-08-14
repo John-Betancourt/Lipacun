@@ -11,7 +11,7 @@
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" type="text/css" href="../librerias/bootstrap/bootstrap.min.css">
 	<!-- Main style sheet -->
-	<link rel="stylesheet" type="text/css" href="../css/style-clubes.css">
+	<link rel="stylesheet" type="text/css" href="../css/index.css">
 	<!-- responsive style sheet -->
 	<link rel="stylesheet" type="text/css" href="../css/responsive.css">
 
