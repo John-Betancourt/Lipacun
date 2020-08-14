@@ -209,13 +209,13 @@
 					<br>
 					<div class="form-row">
 						<div class="form-group col-md-3">
-							<button class="btn btn-danger" type="reset">Borrar Formulario</button>
+							<button class="btn btn-danger" type="reset"><i class="far fa-trash-alt"></i> Borrar Formulario</button>
 						</div>
 						<div class="form-group col-md-3">
-							<button class="btn btn-primary" type="submit" name="enviar">Enviar Formulario</button>
+							<button class="btn btn-primary" type="submit" name="enviar"><i class="fas fa-angle-double-up"></i> Enviar Formulario</button>
 						</div>
 						<div class="form-group col-md-3">
-							<button class="btn btn-success" onclick="history.back()">Volver</button>
+							<button class="btn btn-success" onclick="history.back()"><i class="fas fa-angle-double-left"></i> Volver</button>
 						</div>
 					</div>
 					
