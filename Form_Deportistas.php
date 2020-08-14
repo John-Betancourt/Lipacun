@@ -38,7 +38,7 @@
 
 			<div class="card-body" style="background: linear-gradient(to right, #E0EAFC, #CFDEF3);">
 
-				<form method="POST" action="Registrar_Deportistas.php" id="Formulario_Deportistas" class="needs-validation" novalidate>
+				<form method="POST" action="Registrar_Deportistas.php" id="Formulario_Deportistas" class="form">
 
 					<input type="hidden" name="departamento" value="<?php echo $departamento ?>">
 					
@@ -56,16 +56,12 @@
 										}
 									?>
 							</select>
-							<div class="valid-feedback">¡Ok válido!</div>
-                      		<div class="invalid-feedback">Complete el campo.</div> 
 						</div>
 						<div class="form-group col-md-6">
 							<label><strong>Identificación:</strong></label>
 							<span style= "color: red">*</span>
 							<i class="far fa-address-card"></i>
 							<input type="text" name="CC" class="form-control" minlength="8" maxlength="11" required>
-							<div class="valid-feedback">¡Ok válido!</div>
-							<div class="invalid-feedback">Complete el campo.</div> 
 						</div>
 					</div>
 
@@ -74,8 +70,6 @@
 							<label for="PrimerNombre"><strong>Primer Nombre:</strong></label>
 							<span style= "color: red">*</span>
 							<input type="text" name="Nom1" class="form-control" maxlength="20" onkeypress="return Letras(event)" onpaste="return false" required>
-							<div class="valid-feedback">¡Ok válido!</div>
-                      		<div class="invalid-feedback">Complete el campo.</div> 
 						</div>
 						<div class="form-group col-md-6">
 							<label for="SegundoNombre"><strong>Segundo Nombre:</strong></label>
@@ -88,15 +82,11 @@
 							<label for="PrimerApellido"><strong>Primer Apellido:</strong></label>
 							<span style= "color: red">*</span>
 							<input type="text" name="Ape1" class="form-control" maxlength="20" onkeypress="return Letras(event)" onpaste="return false" required>
-							<div class="valid-feedback">¡Ok válido!</div>
-                      		<div class="invalid-feedback">Complete el campo.</div> 
 						</div>
 						<div class="form-group col-md-6">
 							<label for="SegundoApellido"><strong>Segundo Apellido:</strong></label>
 							<span style= "color: red">*</span>
 							<input type="text" name="Ape2" placeholder="Si no tiene segundo apellido poner N/A" class="form-control" maxlength="10"  onpaste="return false" required>
-							<div class="valid-feedback">¡Ok válido!</div>
-                      		<div class="invalid-feedback">Complete el campo.</div> 
 						</div>
 					</div>
 					
@@ -111,9 +101,7 @@
 									echo '<option value="'.$valores['id'].'">'.$valores['rama'].'</option>';          
 								}
 							?>
-						</select>
-						<div class="valid-feedback">¡Ok válido!</div>
-                      	<div class="invalid-feedback">Complete el campo.</div> 				
+						</select>				
 					</div>
 
 					<div class="form-group col-md-6">
@@ -129,8 +117,6 @@
 							<div class="Fecha_Nacimiento" name="Fecha_Nacimiento" id="Fecha_Nacimiento"></div>
 
 							<input type="date" name="fecha_nacimiento"  min="<?php echo date("1970-01-01"); ?>" max="<?php echo date("Y-m-d"); ?>" class="Nacimiento1 form-control form-control-line" onclick="alert('Por favor selecciona el tipo de Identificación.')" readonly>
-							<div class="valid-feedback">¡Ok válido!</div>
-                      		<div class="invalid-feedback">Complete el campo.</div> 
 						</div>
 						<div class="form-group col-md-6">
 							<label for="Edad"><strong>Edad:</strong></label>
@@ -140,15 +126,14 @@
 										
 					<div class="form-row">
 						<div class="form-group col-md-3">
-							<label for="Patin"><strong>Tipo de Patin:</strong></label>
-							<span style= "color: red">*</span> <i class="fas fa-skating"></i>
+							<label for="Patin"><strong>Tipo de Patin:</strong> <i class="fas fa-skating"></i></label>
+							<span style= "color: red">*</span>
 							<div class="Tipo_Patin" name="Tipo_Patin" id="Tipo_Patin"></div>
 							
 								<select name="Patín" class="Patin1 form-control" maxlength="25" onchange="hidePatin(this.value)" onclick="alert('Por favor selecciona la fecha de nacimiento.')">
 									<option value="" selected>- Selecciona el tipo de patín -</option>
 								</select>
-								<div class="valid-feedback">¡Ok válido!</div>
-                      			<div class="invalid-feedback">Complete el campo.</div> 
+								
 							</div>
 						<div class="form-group col-md-3">
 							<div class="Ligado" style="display:none">	
@@ -164,8 +149,6 @@
 											}
 										?>
 								</select>
-								<div class="valid-feedback">¡Ok válido!</div>
-                      			<div class="invalid-feedback">Complete el campo.</div> 
 							</div>	
 						</div>
 
@@ -174,8 +157,6 @@
 								<label for="Afiliacion"><strong>Fecha de Afiliación:</strong></label>
 								<span style= "color: red">*</span>
 								<input type="date" name="Fecha_afiliacion" class="form-control" maxlength="10" min="2005-01-01" max="<?php echo date("Y-m-d"); ?>"> 
-								<div class="valid-feedback">¡Ok válido!</div>
-                      			<div class="invalid-feedback">Complete el campo.</div> 
 							</div>
 						</div>
 						
@@ -184,23 +165,22 @@
 								<label for="Renovacion"><strong>Fecha de Renovación:</strong></label>
 								<span style= "color: red">*</span>
 								<input type="date" name="Fecha_renovacion" class="form-control" maxlength="10" min="2019-01-01" max="<?php echo date("Y-m-d"); ?>">
-								<div class="valid-feedback">¡Ok válido!</div>
-                      			<div class="invalid-feedback">Complete el campo.</div> 
 							</div>
 						</div>
 					</div>
 					<hr>
 
 					<div class="form-group col-md-6">
-						<div class="custom-control custom-checkbox">
+						<div class="form-check">
 							<label for="politica">Apreciados Clubes y Escuelas, acogiendo y dando cumplimiento a lo dispuesto en la ley 1581 de 2012 y el Decreto Reglamentario 1377 de 2013 y lo consignado en el artículo 15 de nuestra Constitución Política, adopta y aplica la presente Política para el tratamiento de los datos personales.
 								
 							LIPACUN, manifiesta que garantiza la intimidad, derechos a la privacidad, y el buen nombre de las personas, durante el proceso del tratamiento de datos personales, en todas las actividades, las cuales tendrán los principios de confidencialidad, seguridad, legalidad, acceso, libertad y transparencia.</label>
-							<input class="custom-control-input" type="checkbox" value="" id="invalidCheck" required>
-							<label class="custom-control-label" for="invalidCheck">
+							<input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+							<label class="form-check-label" for="invalidCheck">
 								Acepto los términos y condiciones
 							</label>
 							<div class="valid-feedback">¡Aceptado!</div>
+							<span style= "color: red">*</span>
 							<div class="invalid-feedback">
 								Debes estar de acuerdo antes de enviar.
 							</div>
@@ -235,33 +215,24 @@
          }, false);
        })();
 	</script>	
-	<script type="text/javascript">
-		(function() {
-  'use strict';
-  window.addEventListener('load', function() {
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.getElementsByClassName('needs-validation');
-    // Loop over them and prevent submission
-    var validation = Array.prototype.filter.call(forms, function(form) {
-      form.addEventListener('submit', function(event) {
-        if (form.checkValidity() === false) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
-        form.classList.add('was-validated');
-      }, false);
-    });
-  }, false);
-})();
-	</script>
-	  <!-- (function() {
+<script type="text/javascript">
+       (function() {
          var form = document.getElementById('Formulario_Deportistas');
          form.addEventListener('submit', function(event) {
            if (!confirm('¿Está Seguro Que desea enviar los datos?')) {
              event.preventDefault();
            }
          }, false);
-       })(); -->
+       })();
+	</script>
+	 <!-- var checkbox = document.getElementById('invalidCheck');
+			checkbox.addEventListener( 'change', function() {
+				if(this.checked) {
+					if (!confirm('¿Está Seguro Que desea enviar los datos?')) {
+            		 event.preventDefault();
+          			}
+				}
+			});	 -->
 </body>
 </html>
 		
