@@ -173,7 +173,7 @@
 		  </div>
 		  <div class="modal-footer">
 			<button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-			<a href="Inscripciones/Clubes.php"><button type="button" class="btn btn-primary">Cundinamarca</button></a>
+			<a href="Inscripciones/Form_Clubes.php"><button type="button" class="btn btn-primary">Cundinamarca</button></a>
 			<a href="Interdepartamentales/Inscripcion_Clubes.php"><button type="button" class="btn btn-primary">Otro Departamento</button></a>
 		  </div>
 		</div>
