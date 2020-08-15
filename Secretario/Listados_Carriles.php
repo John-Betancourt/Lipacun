@@ -45,7 +45,7 @@
 						<b><center>Lista Competencias de Carriles Evento "<?php echo $Evento; ?>"</center></b>
 					  </h5>
 					  <div class="card-body">
-						<button class="btn btn-primary" data-toggle="modal" data-target="#agregarlistadorematesmodal">
+						<button class="btn btn-outline-success" data-toggle="modal" data-target="#agregarlistadorematesmodal">
 							Nuevo Listado <i class="fa fa-plus-circle"></i>
 						</button>
 						<hr>
@@ -111,7 +111,7 @@
 			  </form>
 		  </div>
 		  <div class="modal-footer">
-			<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+			<button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
 			<button type="button" id="btnGuardarlistado" class="btn btn-primary">Guardar Listado</button>
 		  </div>
 		</div>

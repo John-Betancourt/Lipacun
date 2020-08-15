@@ -50,7 +50,7 @@
 					  </h5>
 					  <div class="card-body">
 						<!--a href="../Inscripciones/Evento.php"><button class="btn btn-primary">Inscribir Deportista</button></a-->
-						<button class="btn btn-primary" data-toggle="modal" data-target="#inscribirdeportistaseventosmodal">
+						<button class="btn btn-outline-primary" data-toggle="modal" data-target="#inscribirdeportistaseventosmodal">
 							Inscribir Deportista <i class="fa fa-plus-circle"></i>
 						  </button>
 						<hr>

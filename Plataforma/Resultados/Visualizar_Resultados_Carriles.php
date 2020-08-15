@@ -44,7 +44,7 @@
 					<div class="justify-content-end align-items-center"><!--d-flex -->
 						<ol class="breadcrumb">
 							<li class="breadcrumb-item"><a href="../Index.php">Pagina Principal</a></li>
-							<li class="breadcrumb-item"><a href="../Eventos.php">Administrar Eventos</a></li>
+							<li class="breadcrumb-item"><a href="../Eventos.php">Eventos</a></li>
 							<li class="breadcrumb-item"><a href="#"><span onclick="history.go(-2)">Resultados Eventos</span></a></li>
 							<li class="breadcrumb-item"><a href="#"><span onclick="history.go(-1)">Listados</span></a></li>
 							<li class="breadcrumb-item active">Visualizar Resultados</li>
@@ -140,7 +140,7 @@
 								</tbody>
 								<tfoot style="background-color: #ccc;color: white; font-weight: bold;">
 									<tr>
-										<th><center>Orden de posición</center></th>
+										<th><center>Posición</center></th>
 										<th><center>#</center></th>
 										<th><center>Deportista</center></th>
 										<th><center>Club</center></th>
@@ -200,38 +200,6 @@ function auto_copyright($startYear = null) {
 		$('#idDataTable').DataTable({
 			"columnDefs": [
 				{ "width": "10%", "targets": 0 }
-			],
-			dom: 'Bfrtip',
-			lengthChange: false,
-			buttons: [
-				{
-					extend:		'copyHtml5',
-					text:		'<i class="fa fa-files-o"></i>',
-					//text:		'<i class="far fa-copy"></i>',
-					titleAttr:	'Copiar Tabla',
-					//title:		'Listado evento: '+evento,
-				},
-				{
-					extend:		'excelHtml5',
-					text:		'<i class="fa fa-file-excel-o"></i>',
-					titleAttr:	'Exportar a Excel',
-					className:	'btn btn-success',
-					//title:		'Listado evento: '+evento,
-				},
-				{
-					extend:		'pdfHtml5',
-					text:		'<i class="fa fa-file-pdf-o"></i>',
-					titleAttr:	'Exportar a PDF',
-					className:	'btn btn-danger',
-					//title:		'Listado evento: '+evento,
-				},
-				{
-					extend:		'print',
-					text:		'<i class="fa fa-print"></i>',
-					titleAttr:	'Imprimir Tabla',
-					className:	'btn btn-warning',
-					//title:		'Listado evento: '+evento,
-				}
 			],
 			language:{
     			"sProcessing":     "Procesando...",

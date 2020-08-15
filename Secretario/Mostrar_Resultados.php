@@ -157,7 +157,7 @@
 							<table class="table table-hover table-striped table-condensed" id="idDataTable"><!--table table-hover table-condensed table-bordered-->
 								<thead style="background-color: #007bff; color: white; font-weight: bold;">
 								  <tr>
-									<th class="th-sm"><center>Puesto</center></th>
+									<th class="th-sm"><center>Posición</center></th>
 									<th class="th-sm"><center>No.</center></th>
 									<th class="th-sm"><center>Deportista</center></th>
 									<th class="th-sm"><center>Club</center></th>
@@ -230,7 +230,7 @@
 								</tbody>
 								<tfoot style="background-color: #ccc;color: white; font-weight: bold;">
 									<tr>
-										<th><center>Puesto</center></th>
+										<th><center>Posición</center></th>
 										<th><center>No.</center></th>
 										<th><center>Deportista</center></th>
 										<th><center>Club</center></th>

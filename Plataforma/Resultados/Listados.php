@@ -36,7 +36,7 @@
 					<div class="justify-content-end align-items-center"><!--d-flex -->
 						<ol class="breadcrumb">
 							<li class="breadcrumb-item"><a href="../Index.php">Pagina Principal</a></li>
-							<li class="breadcrumb-item"><a href="../Eventos.php">Administrar Eventos</a></li>
+							<li class="breadcrumb-item"><a href="../Eventos.php">Eventos</a></li>
 							<li class="breadcrumb-item"><a href="#"><span onclick="history.go(-1)">Resultados Eventos</span></a></li>
 							<li class="breadcrumb-item active">Listados</li>
 						</ol>
@@ -46,8 +46,6 @@
 						<b><center>Listados Evento "<?php echo $Evento ?>"</center></b>
 					  </h5>
 					  <div class="card-body">
-						<!--span class="btn btn-primary">Agregar nuevo</span>
-						<hr-->
 						<div class="tabla">
 							<table class="table table-hover table-striped table-bordered"  id="idDataTable" data-page-length="25"><!--table table-hover table-condensed table-bordered-->
 								<thead style="background-color: #007bff; color: white; font-weight: bold;">
@@ -172,38 +170,4 @@ function auto_copyright($startYear = null) {
 			}
 		});
 	});
-</script>
-
-<script type="text/javascript">
-	function inscribirClubEvento(id){
-		alertify.defaults.theme.cancel = "btn btn-secondary";
-		alertify.confirm('Inscribir a Evento','¿Esta seguro de inscribir el Club y/o Escuela al evento  "'+id+'"?, para confirmar la acción presione continuar.',function(){
-			$.ajax({
-				type:"POST",
-				data:"id="+id,
-				url:"../procesos/Inscribir_Club_Evento.php",
-				success:function(r){
-					if(r==0){
-						alertify.error("ERROR PRESENTADO -  El club no se ha podido registrar al evento");
-					}else if(r==1){
-						alertify.success("El club se ha registrado al evento exitosamente!");
-						alertify.confirm('El club se ha registrado al evento exitosamente. ¿Desea proceder a la inscripción de deportistas al evento  "'+id+'"?',function(){
-							window.open('../Inscripciones/Deportistas_Evento.php?Evento='+id+'','_self');
-						},function(){
-							alertify.success('No olvide inscribir sus deportistas al evento');
-						}).set({labels:{ok:'Aceptar', cancel:'Mas Tarde'}});
-					}else if(r==2){
-						//alertify.error("ERROR PRESENTADO - El Club ya se encuentra registrado al evento!");
-						alertify.confirm('El Club ya se encuentra registrado al evento. ¿Desea proceder a la inscripción de deportistas al evento  "'+id+'"?',function(){
-							window.open('../Inscripciones/Deportistas_Evento.php?Evento='+id+'','_self');
-						},function(){
-							alertify.success('No olvide inscribir sus deportistas al evento');
-						}).set({labels:{ok:'Aceptar', cancel:'Mas Tarde'}});
-					}
-				}
-			});
-		},function(){
-			alertify.error('Cancelado');
-		}).set({labels:{ok:'Continuar', cancel:'Cancelar'}});
-	}
 </script>

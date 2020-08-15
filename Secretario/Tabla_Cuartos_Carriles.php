@@ -52,7 +52,7 @@ $id_listado = $_SESSION['id'];
 		</tbody>
 		<tfoot style="background-color: #ccc;color: white; font-weight: bold;">
 			<tr>
-				<th><center>Orden de posición</center></th>
+				<th><center>Posición inicial</center></th>
 				<th><center>#</center></th>
 				<th><center>Deportista</center></th>
 				<th><center>Club</center></th>
@@ -105,7 +105,7 @@ $id_listado = $_SESSION['id'];
 		</tbody>
 		<tfoot style="background-color: #ccc;color: white; font-weight: bold;">
 			<tr>
-				<th><center>Orden de posición</center></th>
+				<th><center>Posición inicial</center></th>
 				<th><center>#</center></th>
 				<th><center>Deportista</center></th>
 				<th><center>Club</center></th>
@@ -159,7 +159,7 @@ $id_listado = $_SESSION['id'];
 		</tbody>
 		<tfoot style="background-color: #ccc;color: white; font-weight: bold;">
 			<tr>
-				<th><center>Orden de posición</center></th>
+				<th><center>Posición inicial</center></th>
 				<th><center>#</center></th>
 				<th><center>Deportista</center></th>
 				<th><center>Club</center></th>
@@ -213,7 +213,7 @@ $id_listado = $_SESSION['id'];
 		</tbody>
 		<tfoot style="background-color: #ccc;color: white; font-weight: bold;">
 			<tr>
-				<th><center>Orden de posición</center></th>
+				<th><center>Posición inicial</center></th>
 				<th><center>#</center></th>
 				<th><center>Deportista</center></th>
 				<th><center>Club</center></th>

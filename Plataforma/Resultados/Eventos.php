@@ -34,7 +34,7 @@
 					<div class="justify-content-end align-items-center"><!--d-flex -->
 						<ol class="breadcrumb">
 							<li class="breadcrumb-item"><a href="../Index.php">Pagina Principal</a></li>
-							<li class="breadcrumb-item"><a href="../Eventos.php">Administrar Eventos</a></li>
+							<li class="breadcrumb-item"><a href="../Eventos.php">Eventos</a></li>
 							<li class="breadcrumb-item active">Resultados Eventos</li>
 						</ol>
 					</div>
@@ -43,10 +43,8 @@
 						<b><center>Lista Eventos</center></b>
 					  </h5>
 					  <div class="card-body">
-						<!--span class="btn btn-primary">Agregar nuevo</span>
-						<hr-->
 						<div class="tabla">
-							<table class="table table-hover table-striped table-bordered"  id="idDataTable"><!--table table-hover table-condensed table-bordered-->
+							<table class="table table-hover table-striped table-bordered"  id="idDataTable">
 								<thead style="background-color: #007bff; color: white; font-weight: bold;">
 								  <tr>
 									<th class="th-sm"><center>#</center></th>
