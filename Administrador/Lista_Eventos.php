@@ -33,11 +33,11 @@
 				<div class="col-sm-12">
 					<div id="navbar"></div><br>
 					<div class="card text-left">
-					  <h5 class="card-header">
+					  <h5 class="card-header" >
 						<b><center>Lista de Eventos</center></b>
 					  </h5>
 					  <div class="card-body">
-						<button class="btn btn-primary" data-toggle="modal" data-target="#agregarnuevoseventosmodal">
+						<button class="btn btn-outline-success" data-toggle="modal" data-target="#agregarnuevoseventosmodal">
 							Nuevo Evento <i class="fa fa-plus-circle"></i>
 						</button>
 						<hr>
