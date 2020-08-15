@@ -64,7 +64,7 @@
 									$result1=$mysqli->query($sql);
 									while($row1=$result1->fetch_assoc()){
 										$nombre_evento = $row1['evento'];
-										$sql = "SELECT * FROM eventos WHERE fecha_evento <='$fecha_actual' AND nombre = '$nombre_evento' ORDER BY fecha_evento DESC";
+										$sql = "SELECT * FROM eventos WHERE fecha_evento >='$fecha_actual' AND nombre = '$nombre_evento' ORDER BY fecha_evento DESC";
 										$result2=$mysqli->query($sql);
 										while($row=$result2->fetch_assoc()){
 											$query = "SELECT municipio FROM municipios WHERE id_municipio = '".$row['municipio']."'";
