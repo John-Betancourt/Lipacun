@@ -165,7 +165,7 @@ function auto_copyright($startYear = null) {
 <script type="text/javascript">
 	function inscribirClubEvento(id){
 		alertify.defaults.theme.cancel = "btn btn-danger";
-		alertify.confirm('Inscribir a Evento','¿Esta seguro de inscribir el Club y/o Escuela al evento  "'+id+'"?, para confirmar la acción presione continuar.',function(){
+		alertify.confirm('<strong>Inscribir a Evento</strong>','¿Esta seguro de inscribir el Club y/o Escuela al evento  "'+id+'"?, para confirmar la acción presione continuar.',function(){
 			$.ajax({
 				type:"POST",
 				data:"id="+id,

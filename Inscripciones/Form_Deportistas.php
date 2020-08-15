@@ -144,7 +144,7 @@
 							<span style= "color: red">*</span> <i class="fas fa-skating"></i>
 							<div class="Tipo_Patin" name="Tipo_Patin" id="Tipo_Patin"></div>
 							
-								<select name="Patín" class="Patin1 form-control" maxlength="25" onchange="hidePatin(this.value)" onclick="alert('Por favor selecciona la fecha de nacimiento.')">
+								<select name="Patín" class="Patin1 form-control" maxlength="25" onchange="hidePatin(this.value)" onclick="alert('Por favor selecciona la fecha de nacimiento.')" required>
 									<option value="" selected>- Selecciona el tipo de patín -</option>
 								</select>
 								<div class="valid-feedback">¡Ok válido!</div>
