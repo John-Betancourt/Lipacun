@@ -51,27 +51,27 @@ Panels y Border
 *******************/
     
 .contenedor{
-	width: 100%;
-	background: #36bea6;
-	/**font-family: 'Courgette', cursive;**/
-	font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif";
-	
+	width: 85%;
+  background: rgba(7,91,116,1.00);
+  border-radius: 9px;
+  font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif";
+  /* background: #136a8a; 
+  background: -webkit-linear-gradient(to right, #267871, #136a8a); 
+  background: linear-gradient(to right, #267871, #136a8a);  */
 } 
-.contenedor:hover{
-	backface-visibility: visible;
-	background: rgba(7,91,116,1.00);
-}
 
 .admi{
-	width: 95%;
+	width: 85%;
 	max-width: 1000px;
 	height: 30%;
 	margin: auto;
 	text-align: center;
 	padding: 20px 100px;
-	font-size: 2vw;
+  font-size: 2vw;
+  border-radius: 9px;
 }
-    footer{
+
+  footer{
 	width: 100%;
 	font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif";
 }
@@ -437,3 +437,4 @@ FIN NOTIFICACIONES
 .topbar {
   position: fixed;
   width: 100%; }
+  
