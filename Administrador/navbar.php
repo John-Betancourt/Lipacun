@@ -12,7 +12,7 @@
   $user = $result->fetch_assoc();
 ?>
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#007bff"><!--dark #009efb-->
-  <a class="navbar-brand" href="#" id="btnSalirDeLipacun">LIPACUN &nbsp; |</a>
+  <a class="navbar-brand" href="#" id="btnSalirDeLipacun">LIPACUN &nbsp; </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -20,19 +20,19 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="Index.php">INICIO &nbsp; |<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="Index.php">INICIO &nbsp; <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="Clubes.php">VALIDAR CLUBES &nbsp; |</a>
+        <a class="nav-link" href="Clubes.php">VALIDAR CLUBES &nbsp; </a>
       </li>
 	  <li class="nav-item active">
-        <a class="nav-link" href="Lista_Eventos.php">ADMINISTRAR EVENTOS &nbsp; |</a>
+        <a class="nav-link" href="Lista_Eventos.php">ADMINISTRAR EVENTOS &nbsp; </a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="Lista_Clubes.php">CLUBES &nbsp; |</a>
+        <a class="nav-link" href="Lista_Clubes.php">CLUBES &nbsp; </a>
       </li>				
       <li class="nav-item active">
-        <a class="nav-link" href="Listar_Deportistas.php">DEPORTISTAS &nbsp; |</a>
+        <a class="nav-link" href="Listar_Deportistas.php">DEPORTISTAS &nbsp; </a>
       </li>
     </ul>
 

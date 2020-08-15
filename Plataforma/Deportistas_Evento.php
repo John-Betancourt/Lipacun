@@ -100,7 +100,7 @@
 								$evento = $datos['evento'];
 								$fecha_actual = date("Y-m-d");
 
-								$sql = "SELECT * FROM eventos WHERE nombre = '$evento' AND fecha_evento >= '$fecha_actual'";
+								$sql = "SELECT * FROM eventos WHERE nombre = '$evento' AND fecha_evento <= '$fecha_actual'";
 								//echo '<option value="'.$sql.'">'.$sql.'</option>';
 								$resultado = $mysqli->query($sql);
 								$row = $resultado->num_rows;
@@ -119,7 +119,7 @@
 			  </form>
 		  </div>
 		  <div class="modal-footer">
-			<button type="button" id="limpiar" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+			<button type="button" id="limpiar" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
 			<button type="button" id="btnAgregardeportistaevento" class="btn btn-primary">Enviar</button>
 		  </div>
 		</div>
@@ -201,7 +201,7 @@ function auto_copyright($startYear = null) {
 					}else if(r==6){
 						alertify.defaults.theme.cancel = "btn btn-secondary";
 						alertify.confirm('Atención','El Deportista que intenta inscribir con la identificación "'+identificacion+'" al evento "'+evento+'", NO EXISTE o se le ha dado de baja. Para inscribirlo al club presione "Inscribir"; Si escribio mal la identificación y desea corregirla presione "Corregir".',function(){
-							window.open('Deportistas.php','_self');
+							window.open('../Inscripciones/Form_Deportistas.php','_self');
 						},function(){
 							
 						}).set({labels:{ok:'Inscribir', cancel:'Corregir'}});
@@ -220,8 +220,8 @@ function auto_copyright($startYear = null) {
 
 <script type="text/javascript">
 	function EliminarDeportistaEvento(id){
-		alertify.defaults.theme.cancel = "btn btn-secondary";
-		alertify.confirm('Eliminar Deportista del Evento','¿Esta seguro de eliminar el  deportista "'+id+'" del evento?, para confirmar la acción presione continuar.',function(){
+		alertify.confirm('<strong>Eliminar Deportista del Evento</strong>','¿Esta seguro de eliminar el  deportista "'+id+'" del evento?, para confirmar la acción presione continuar.',function(){
+			alertify.defaults.theme.cancel = "btn btn-danger";
 			$.ajax({
 				type:"POST",
 				data:"id="+id,
