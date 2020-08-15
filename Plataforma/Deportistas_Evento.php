@@ -100,7 +100,7 @@
 								$evento = $datos['evento'];
 								$fecha_actual = date("Y-m-d");
 
-								$sql = "SELECT * FROM eventos WHERE nombre = '$evento' AND fecha_evento >= '$fecha_actual'";
+								$sql = "SELECT * FROM eventos WHERE nombre = '$evento' AND fecha_evento <= '$fecha_actual'";
 								//echo '<option value="'.$sql.'">'.$sql.'</option>';
 								$resultado = $mysqli->query($sql);
 								$row = $resultado->num_rows;
