@@ -66,7 +66,7 @@
 										<td><center><?php echo $row['nombre'] ?></center></td>
 										<td><center><?php echo $fila['municipio'] ?></center></td>
 										<td><center><?php echo $row['fecha_evento'] ?></center></td>
-										<td><center><a href="#" onClick="inscribirClubEvento('<?php echo $row['nombre'] ?>')"><span class="label label-success">Inscribir</span></a></center></td>
+										<td><center><a href="#" onClick="inscribirClubEvento('<?php echo $row['nombre'] ?>')"><span class="label label-primary">Inscribir</span></a></center></td>
 									</tr>
 									<?php
 										$No +=1;
