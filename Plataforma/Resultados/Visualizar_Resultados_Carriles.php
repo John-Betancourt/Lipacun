@@ -56,7 +56,9 @@
 					  </h5>
 					  <div class="card-body">
 						<div class="tabla">
-							<table id="idDataTable" class="display table table-hover table-striped table-bordered" style="width:100%">
+							<table id="idDataTable" class="display table table-hover table-striped table-bordered" 
+								style="width:100%" data-page-length="16"
+							>
 								<thead style="background-color: #007bff; color: white; font-weight: bold;">
 								  <tr>
 									<th class="th-sm"><center>Posición</center></th>
@@ -196,6 +198,9 @@ function auto_copyright($startYear = null) {
     	//$('#idDataTable').append('<caption style="caption-side: bottom">A fictional company\'s staff table.</caption>');
 		
 		$('#idDataTable').DataTable({
+			"columnDefs": [
+				{ "width": "10%", "targets": 0 }
+			],
 			dom: 'Bfrtip',
 			lengthChange: false,
 			buttons: [

@@ -93,7 +93,7 @@ $id_listado = $_SESSION['id'];
 		</tbody>
 		<tfoot style="background-color: #ccc;color: white; font-weight: bold;">
 			<tr>
-				<th><center>Orden de posición</center></th>
+				<th><center>Posición</center></th>
 				<th><center>#</center></th>
 				<th><center>Deportista</center></th>
 				<th><center>Club</center></th>
@@ -107,6 +107,9 @@ $id_listado = $_SESSION['id'];
 	$(document).ready(function() {
 		
 		$('#idDataTable').DataTable({
+			"columnDefs": [
+				{ "width": "10%", "targets": 0 }
+			],
 			dom: 'Bfrtip',
 			lengthChange: false,
 			buttons: [
