@@ -27,7 +27,7 @@
 		<tbody>
 		<?php
 			$No=1;
-			$sql = "SELECT * FROM eventos ORDER BY fecha_evento DESC";
+			$sql = "SELECT * FROM eventos ORDER BY fecha_evento ASC";
 			$result=$mysqli->query($sql);
 			while($row=$result->fetch_assoc()){
 				$query = "SELECT municipio FROM municipios WHERE id_municipio = '".$row['municipio']."'";
