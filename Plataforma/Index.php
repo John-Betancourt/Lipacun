@@ -51,21 +51,24 @@
 				<div class="footer-main">
 					<div class="footer-columna">
 						<a href="../Inscripciones/Form_Deportistas.php"><button class="botones"><i><img src="../imagenes/iconos/add-user-male--v1.png"/></i></button></a>
-						<a href="../Inscripciones/Form_Deportistas.php"><h3>Incribir a nuevo deportista</h3></a><hr><!--fa fa-user-->
+						<a href="../Inscripciones/Form_Deportistas.php"><h3>Incribir a nuevo deportista</h3></a><hr>
 					</div><br>
 
 					<div class="footer-columna">
 						<a href="Eventos.php"><button class="botones"><i><img src="../imagenes/iconos/calendar.png"/></i></button></a>
-						<a href="Eventos.php"><h3>Eventos</h3></a><hr><!--fa fa-calendar-->
+						<a href="Eventos.php"><h3>Eventos</h3></a><hr>
 					</div><br>
 
 					<div class="footer-columna">
 						<a href="Listar_Deportistas.php"><button class="botones"><i><img src="../imagenes/iconos/group.png"></i></button></a>
-						<a href="Listar_Deportistas.php"><h3>Mis deportistas</h3></a><hr><!--fa fa-users-->
+						<a href="Listar_Deportistas.php"><h3>Mis deportistas</h3></a><hr>
 					</div>
 				</div>
 			</div>
 		</footer>
+	
+	</div>
+	</div>
 		<!-- ============================================================== -->
         <!-- footer -->
         <!-- ============================================================== -->
