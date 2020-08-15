@@ -225,44 +225,34 @@
 		</div>
 	</div>
 <!-- Borrar datos -->
-<script type="text/javascript">
+	<script type="text/javascript">
        (function() {
          var form = document.getElementById('Formulario_Clubes');
          form.addEventListener('reset', function(event) {
-           // si es false entonces que no haga el reset
            if (!confirm('¿Está seguro que desea borrar los datos?')) {
              event.preventDefault();
            }
          }, false);
        })();
 	</script>	
+	<!-- Enviar datos -->
 	<script type="text/javascript">
 		(function() {
-  'use strict';
-  window.addEventListener('load', function() {
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.getElementsByClassName('needs-validation');
-    // Loop over them and prevent submission
-    var validation = Array.prototype.filter.call(forms, function(form) {
-      form.addEventListener('submit', function(event) {
-        if (form.checkValidity() === false) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
-        form.classList.add('was-validated');
-      }, false);
-    });
-  }, false);
-})();
+		'use strict';
+		window.addEventListener('load', function() {
+			var forms = document.getElementsByClassName('needs-validation');
+			var validation = Array.prototype.filter.call(forms, function(form) {
+			form.addEventListener('submit', function(event) {
+				if (form.checkValidity() === false) {
+				event.preventDefault();
+				event.stopPropagation();
+				}
+				form.classList.add('was-validated');
+			}, false);
+			});
+		}, false);
+		})();
 	</script>
-	  <!-- (function() {
-         var form = document.getElementById('Formulario_Deportistas');
-         form.addEventListener('submit', function(event) {
-           if (!confirm('¿Está Seguro Que desea enviar los datos?')) {
-             event.preventDefault();
-           }
-         }, false);
-       })(); -->
 </body>
 </html>
 		

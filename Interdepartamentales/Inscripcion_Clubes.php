@@ -37,28 +37,42 @@
 
 					<div class="form-row">
 						<div class="form-group col-md-6">
-							<label><strong>Municipio Sede:</strong></label>
+							<label for="Departamentos"><strong>Departamento:</strong></label>
 							<span style= "color: red">*</span>
-							<i class="fas fa-university"></i>
-							<select name="Municipios" class="form-control" required>
-								<option value="" selected disabled>- Selecciona un Municipio  -</option>
-                                <?php
-                                    $query = $mysqli -> query ("select * FROM municipios WHERE departamento_id = 25");
-                                    while ($valores = mysqli_fetch_array($query)) {
-                                        echo '<option value="'.$valores['id_municipio'].'">'.$valores['municipio'].'</option>';          
-                                    }
-					            ?>
+							<i class="fas fa-city"></i>
+							<select name="Departamentos" class="form-control" id="Departamentos" onchange="hideDepartamento(this.value)" required>
+								<option value=""selected disabled>- Selecciona un Departamento -</option>
+								<?php
+									$query = $mysqli -> query ("SELECT * FROM departamentos WHERE id_departamento != 25");     
+									while ($valores = mysqli_fetch_array($query)) {
+										echo '<option value="'.$valores['id_departamento'].'">'.$valores['departamento'].'</option>';
+									}
+								?>
 							</select>
-							<div class="valid-feedback">¡Ok válido!</div>
-                      		<div class="invalid-feedback">Complete el campo.</div> 
-						</div>
-						<div class="form-group col-md-6">
-							<label><strong>Nombre del club y/o escuela:</strong></label>
-							<span style= "color: red">*</span>
-							<input type="text" name="Nombre" class="form-control" maxlength="70" onkeypress="return Alfanumerico(event)" onpaste="return false" required>
 							<div class="valid-feedback">¡Ok válido!</div>
 							<div class="invalid-feedback">Complete el campo.</div> 
 						</div>
+
+						<div class="form-group col-md-6">
+							<div id="ocultar" style="display:none;" >
+								<label for="Ciudad"><strong>Ciudad/Municipio:</strong></label>
+								<span style= "color: red">*</span>
+								<i class="fas fa-university"></i>
+								<select class="Ciudad form-control" name="Ciudad" id="Ciudad" style="display:none;" required></select>
+								<div class="valid-feedback">¡Ok válido!</div>
+								<div class="invalid-feedback">Complete el campo.</div> 
+				
+								<input class="ciudad1 form-control"  type="text" name="Ciudad1" value="BOGOTÁ, D.C." maxlength="20" style="display:none;" readonly>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group col-md-6">
+						<label><strong>Nombre del club y/o escuela:</strong></label>
+						<span style= "color: red">*</span>
+						<input type="text" name="Nombre" class="form-control" maxlength="70" onkeypress="return Alfanumerico(event)" onpaste="return false" required>
+						<div class="valid-feedback">¡Ok válido!</div>
+						<div class="invalid-feedback">Complete el campo.</div> 
 					</div><br>
 
                     <div class="text-center">
@@ -224,45 +238,40 @@
 			</div>
 		</div>
 	</div>
+
+
 <!-- Borrar datos -->
 <script type="text/javascript">
-       (function() {
-         var form = document.getElementById('Formulario_Clubes');
-         form.addEventListener('reset', function(event) {
-           // si es false entonces que no haga el reset
-           if (!confirm('¿Está seguro que desea borrar los datos?')) {
-             event.preventDefault();
-           }
-         }, false);
-       })();
-	</script>	
-	<script type="text/javascript">
-		(function() {
-  'use strict';
-  window.addEventListener('load', function() {
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.getElementsByClassName('needs-validation');
-    // Loop over them and prevent submission
-    var validation = Array.prototype.filter.call(forms, function(form) {
-      form.addEventListener('submit', function(event) {
-        if (form.checkValidity() === false) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
-        form.classList.add('was-validated');
-      }, false);
-    });
-  }, false);
-})();
-	</script>
-	  <!-- (function() {
-         var form = document.getElementById('Formulario_Deportistas');
-         form.addEventListener('submit', function(event) {
-           if (!confirm('¿Está Seguro Que desea enviar los datos?')) {
-             event.preventDefault();
-           }
-         }, false);
-       })(); -->
+	(function() {
+		var form = document.getElementById('Formulario_Clubes');
+		form.addEventListener('reset', function(event) {
+		// si es false entonces que no haga el reset
+		if (!confirm('¿Está seguro que desea borrar los datos?')) {
+			event.preventDefault();
+		}
+		}, false);
+	})();
+</script>	
+
+<script type="text/javascript">
+	(function() {
+	'use strict';
+	window.addEventListener('load', function() {
+		// Fetch all the forms we want to apply custom Bootstrap validation styles to
+		var forms = document.getElementsByClassName('needs-validation');
+		// Loop over them and prevent submission
+		var validation = Array.prototype.filter.call(forms, function(form) {
+		form.addEventListener('submit', function(event) {
+			if (form.checkValidity() === false) {
+			event.preventDefault();
+			event.stopPropagation();
+			}
+			form.classList.add('was-validated');
+		}, false);
+		});
+	}, false);
+	})();
+</script>
 </body>
 </html>
 		

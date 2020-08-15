@@ -7,14 +7,14 @@ function hideOtros(option){
 }
 
 function hideDepartamento(option){
+	$('#ocultar').show();
 	if(option==11 || option=="Bogotá D.C"){
-		$('.Bogota').show();
+		$('.ciudad1').show();
 		$('.Ciudad').hide();
 	}else{
+	
 		$('.Ciudad').show();
-		$('.Bogota').hide();
-		//var dato = $('#Departamentos').val();
-		//var dato = $(this).val();
+		$('.ciudad1').hide();
 		dato = (option);
 			$.ajax({
 				data: {"dato" : dato},
