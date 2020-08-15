@@ -9,9 +9,16 @@
   }
 
 /* Contenido */
-   H1 {font-size: 20pt; font-weight: bold; color: black;}
-   H2 {font-size: 15pt; font-weight: bold; font-style: italic; color: black;}
-   H3 {font-size: 12pt; font-weight: bold; color: black;}
+H1 {font-size: 20pt; font-weight: bold; color: black;}
+H2 {font-size: 15pt; font-weight: bold; font-style: italic; color: black;}
+H3 {font-size: 12pt; font-weight: bold; color: black;}
+.txt1 {
+  font-family: verdana, arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #000000;
+}
+/* Contenido */
 
 /*******************
 Panels y Border
@@ -311,25 +318,26 @@ NOTIFICACIONES
   font-family:"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   letter-spacing:0.5px;
   float: left;
-  min-width: 150px;
+  min-width: 260px;
   padding:10px;
   margin: 2px 0 0;
   font-size: 14px;
   text-align: left;
   list-style: none;
-  background-color: #fff;
-  -webkit-background-clip: padding-box;
-          background-clip: padding-box;
+  /* background: linear-gradient(to right, #e0eafc, #cfdef3); */
+  /* background: linear-gradient(to right, #1c92d2, #f2fcfe); */
+  /* background: linear-gradient(to right, #83a4d4, #b6fbff); */
+  /* background: linear-gradient(to right, #fceabb, #f8b500); */
+  background: linear-gradient(to right, #f7f8f8, #acbb78);
   border: 1px solid #ccc;
   border: 1px solid rgba(0, 0, 0, .15);
   border-radius: 4px;
-  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
-          box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
 }
 
 /********************
 FIN NOTIFICACIONES
 ********************/
+
 .label {
   padding: 3px 10px;
   line-height: 13px;
