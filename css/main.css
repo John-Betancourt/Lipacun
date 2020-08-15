@@ -54,7 +54,7 @@ a:focus {
 
 a:hover {
 	text-decoration: none;
-  color: #57b846;
+  color: #0f9b0f;
 }
 
 /*---------------------------------------------*/
@@ -69,12 +69,6 @@ p {
 	color: #666666;
 	margin: 0px;
 }
-
-ul, li {
-	margin: 0px;
-	list-style-type: none;
-}
-
 
 /*---------------------------------------------*/
 input {
@@ -149,7 +143,7 @@ iframe {
   font-family: Poppins-Regular;
   font-size: 13px;
   line-height: 1.4;
-  color: #999999;
+  color: #2C5364;
 }
 
 /*//////////////////////////////////////////////////////////////////
@@ -179,7 +173,10 @@ iframe {
 
 .wrap-login100 {
   width: 670px;
-  background: #fff;
+  /* background: #fff; */
+  background: #C9D6FF; 
+  background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF); 
+  background: linear-gradient(to right, #E2E2E2, #C9D6FF);
   /*background:rgb(235, 202, 19);*/
   border-radius: 10px;
   overflow: hidden;
@@ -258,7 +255,7 @@ iframe {
 .label-input100 {
   font-family: Poppins-Regular;
   font-size: 15px;
-  color: #808080;
+  color: #0F2027;
   line-height: 1.2;
   text-align: right;
 
@@ -324,57 +321,6 @@ input.input100 {
   width: 100%;
 }
 
-/*==================================================================
-[ Restyle Checkbox ]*/
-
-.input-checkbox100 {
-  display: none;
-}
-
-.label-checkbox100 {
-  font-family: Poppins-Regular;
-  font-size: 13px;
-  color: #999999;
-  line-height: 1.4;
-
-  display: block;
-  position: relative;
-  padding-left: 26px;
-  cursor: pointer;
-}
-
-.label-checkbox100::before {
-  content: "\f00c";
-  font-family: FontAwesome;
-  font-size: 13px;
-  color: transparent;
-
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  width: 18px;
-  height: 18px;
-  border-radius: 2px;
-  background: #fff;
-  border: 1px solid #e6e6e6;
-  left: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-
-.input-checkbox100:checked + .label-checkbox100::before {
-  color: #57b846;
-}
-
 /*------------------------------------------------------------------
 [ Button ]*/
 .container-login100-form-btn {
@@ -398,7 +344,8 @@ input.input100 {
   padding: 0 20px;
   min-width: 160px;
   height: 50px;
-  background-color: #57b846;
+  background-color: #2948ff;
+  /* background-color: #57b846; */
   border-radius: 25px;
 
   /*font-family: Poppins-Regular;*/
@@ -413,7 +360,7 @@ input.input100 {
 }
 
 .login100-form-btn:hover {
-  background-color: #333333;
+  background-color: #396afc;
 }
 
 
@@ -440,66 +387,3 @@ input.input100 {
     padding: 0 5px;
   }
 }
-
-
-/*------------------------------------------------------------------
-[ Alert validate ]*/
-
-.validate-input {
-  position: relative;
-}
-
-.alert-validate::before {
-  content: attr(data-validate);
-  position: absolute;
-  max-width: 70%;
-  background-color: #fff;
-  border: 1px solid #c80000;
-  border-radius: 2px;
-  padding: 4px 25px 4px 10px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-  right: 2px;
-  pointer-events: none;
-
-  font-family: Poppins-Medium;
-  color: #c80000;
-  font-size: 13px;
-  line-height: 1.4;
-  text-align: left;
-
-  visibility: hidden;
-  opacity: 0;
-
-  -webkit-transition: opacity 0.4s;
-  -o-transition: opacity 0.4s;
-  -moz-transition: opacity 0.4s;
-  transition: opacity 0.4s;
-}
-
-.alert-validate::after {
-  content: "\f06a";
-  font-family: FontAwesome;
-  display: block;
-  position: absolute;
-  color: #c80000;
-  font-size: 15px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-  right: 8px;
-}
-
-.alert-validate:hover:before {
-  visibility: visible;
-  opacity: 1;
-}
-
-
