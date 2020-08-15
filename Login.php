@@ -121,7 +121,7 @@
 				<form class="login100-form validate-orm" action="login.php" method="POST">
 
 				  <div class="wrap-input100 validaeinput m-b-26">
-					<label for="Username" class="label-input100">Nombre Corto Club y/o Escuela</label>
+					<label for="Username" class="label-input100">Club y/o Escuela</label>
 					<input class="input100" type="text" id="Username" name="Username" placeholder="Ingrese Nombre Corto Club y/o Escuela" required>
 					<span class="focus-input100"></span>
 				  </div>
@@ -163,7 +163,7 @@
 	  <div class="modal-dialog" role="document">
 		<div class="modal-content">
 		  <div class="modal-header">
-			<h5 class="modal-title" id="staticBackdropLabel">PLATAFORMA LIPACUN</h5>
+			<h5 class="modal-title" id="staticBackdropLabel"><strong>PLATAFORMA LIPACUN</strong></h5>
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 			  <span aria-hidden="true">&times;</span>
 			</button>
