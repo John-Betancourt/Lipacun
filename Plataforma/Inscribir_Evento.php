@@ -54,7 +54,7 @@
 								<?php
 									$No=1;
 									$fecha_actual = date("Y-m-d");
-									$sql = "SELECT * FROM eventos WHERE fecha_evento >='$fecha_actual' ORDER BY fecha_evento ASC";
+									$sql = "SELECT * FROM eventos WHERE fecha_evento <='$fecha_actual' ORDER BY fecha_evento ASC";
 									$result=$mysqli->query($sql);
 									while($row=$result->fetch_assoc()){
 										$query = "SELECT municipio FROM municipios WHERE id_municipio = '".$row['municipio']."'";
@@ -66,7 +66,7 @@
 										<td><center><?php echo $row['nombre'] ?></center></td>
 										<td><center><?php echo $fila['municipio'] ?></center></td>
 										<td><center><?php echo $row['fecha_evento'] ?></center></td>
-										<td><center><a href="#" onClick="inscribirClubEvento('<?php echo $row['nombre'] ?>')"><span class="label label-primary">Inscribir</span></a></center></td>
+										<td><center><a href="#" onClick="inscribirClubEvento('<?php echo $row['nombre'] ?>')"><span class="label label-success">Inscribir</span></a></center></td>
 									</tr>
 									<?php
 										$No +=1;
