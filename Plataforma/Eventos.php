@@ -43,8 +43,8 @@
 					</div><br>
 
 					<div class="footer-columna">
-						<a href="../Inscripciones/Evento.php"><button class="botones"><i><img src="../imagenes/iconos/add-user-group-man-man--v1.png"/></i></button></a>
-						<a href="../Inscripciones/Evento.php"><h3>Inscribir deportitas a evento</h3></a><hr>
+						<a href="#" data-toggle="modal" data-target="#inscribirdeportistaseventosmodal"><button class="botones"><i><img src="../imagenes/iconos/add-user-group-man-man--v1.png"/></i></button></a>
+						<a href="#" data-toggle="modal" data-target="#inscribirdeportistaseventosmodal"><h3>Inscribir deportitas a evento</h3></a><hr>
 					</div><br>
 
 					<div class="footer-columna">
@@ -72,7 +72,7 @@
 	  <div class="modal-dialog" role="document">
 		<div class="modal-content">
 		  <div class="modal-header">
-			<h5 class="modal-title" id="staticBackdropLabel">Evento a Inscribir Deportistas</h5>
+			<h5 class="modal-title" id="staticBackdropLabel"><strong>Evento a Inscribir Deportistas</strong></h5>
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 			  <span aria-hidden="true">&times;</span>
 			</button>
@@ -82,14 +82,14 @@
 				  <div class="form-group">
 					  <label for="Evento">Nombre Evento:</label>
 					  <select class="form-control" id="Evento" name="Evento" required>
-						<option selected disabled value="0">- Seleccione el Evento -</option>
+						<option value="0" selected disabled >- Seleccione el Evento -</option>
 						<?php
 							$query = $mysqli->query("SELECT * FROM inscripcion_evento_clubes WHERE club = '$idUsuario'");
 							while ($datos = mysqli_fetch_array($query)) {
 								$evento = $datos['evento'];
 								$fecha_actual = date("Y-m-d");
 
-								$sql = "SELECT * FROM eventos WHERE nombre = '$evento' AND fecha_evento >= '$fecha_actual'";
+								$sql = "SELECT * FROM eventos WHERE nombre = '$evento' AND fecha_evento <= '$fecha_actual'";
 								//echo '<option value="'.$sql.'">'.$sql.'</option>';
 								$resultado = $mysqli->query($sql);
 								$row = $resultado->num_rows;
@@ -104,7 +104,7 @@
 			  </form>
 		  </div>
 		  <div class="modal-footer">
-			<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+			<button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
 			<button type="button" id="btnAgregardeportistaevento" class="btn btn-primary">Enviar</button>
 		  </div>
 		</div>
@@ -118,7 +118,7 @@
 	$(document).ready(function(){
 		$('#btnAgregardeportistaevento').click(function(){
 			var evento = $('#Evento').val();
-			if(evento==""){
+			if(evento==null){
 				alertify.error("Por favor seleccione un evento válido.");
 			}else if(evento!=0){
 				window.open('../Plataforma/Deportistas_Evento.php?id='+evento,'_self');
