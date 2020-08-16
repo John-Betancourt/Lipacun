@@ -41,7 +41,7 @@
 		
 		<div class="contenedor">
 	      <div class="admi">
-			<h1 class="text-uppercase">COMPETENCIAS "<?php echo $Evento ?>"</h1>
+			<h1>COMPETENCIA: "<?php echo $Evento ?>"</h1>
 			</div>
 		</div>
 		
