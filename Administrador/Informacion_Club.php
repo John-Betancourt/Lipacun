@@ -188,7 +188,7 @@
 							<hr>
 							<div class="form-group">
 								<div class="col-sm-12">
-									<button class="btn btn-primary">Actualizar Información Club</button>
+									<button class="btn btn-primary"><i class="fas fa-angle-double-up"></i> Actualizar Información</button>
 								</div>
 							</div>
 						</form>
