@@ -213,7 +213,7 @@
 							<button class="btn btn-primary" type="submit" name="enviar"><i class="fas fa-angle-double-up"></i> Enviar Formulario</button>
 						</div>
 						<div class="form-group col-md-3">
-							<button class="btn btn-success" onClick="history.back()"><i class="fas fa-angle-double-left"></i> Volver</button>
+							<input type="button" class="btn btn-success" onClick="history.back()" value="Volver">
 						</div>
 					</div>
 					
