@@ -108,17 +108,17 @@ function auto_copyright($startYear = null) {
 
 <script type="text/javascript">
 	function BajaDeportista(id){
-		alertify.confirm('Advertencia','¿Esta seguro de dar baja al deportista con la identificación "'+id+'"?, para confirmar la acción presione continuar.',function(){
+		alertify.confirm('Advertencia','¿Esta seguro de dar baja al deportista con el número de identificación: "'+id+'"? para confirmar presione continuar.',function(){
 			$.ajax({
 				type:"POST",
 				data:"id="+id,
 				url:"../procesos/Deportista_Baja.php",
 				success:function(r){
 					if(r==0){
-						alertify.error("ERROR PRESENTADO - No se ha podido dar de baja al Club y/o Escuela, por favor intente nuevamente.");
+						alertify.error("ERROR PRESENTADO - No se ha podido dar de baja el deportista, por favor intente nuevamente.");
 					}else if(r==1){
 						$('#tablaDeportistas').load('Tabla_Deportistas.php');
-						alertify.success("Se ha dado de baja al Club y/o Escuela correctamente.");
+						alertify.success("Se ha dado de baja al deportista.");
 					}
 				}
 			});
