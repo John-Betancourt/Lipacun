@@ -45,7 +45,7 @@
 						<b><center>Lista Competencias de Carriles Evento "<?php echo $Evento; ?>"</center></b>
 					  </h5>
 					  <div class="card-body">
-						<button class="btn btn-outline-success" data-toggle="modal" data-target="#agregarlistadorematesmodal">
+						<button class="btn btn-outline-primary" data-toggle="modal" data-target="#agregarlistadorematesmodal">
 							Nuevo Listado <i class="fa fa-plus-circle"></i>
 						</button>
 						<hr>

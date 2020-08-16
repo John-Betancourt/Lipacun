@@ -37,7 +37,7 @@
 						<b><center>Lista de Eventos</center></b>
 					  </h5>
 					  <div class="card-body">
-						<button class="btn btn-outline-success" data-toggle="modal" data-target="#agregarnuevoseventosmodal">
+						<button class="btn btn-outline-primary" data-toggle="modal" data-target="#agregarnuevoseventosmodal">
 							Nuevo Evento <i class="fa fa-plus-circle"></i>
 						</button>
 						<hr>
