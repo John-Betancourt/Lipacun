@@ -63,7 +63,7 @@
 							<label><strong>Identificación:</strong></label>
 							<span style= "color: red">*</span>
 							<i class="far fa-address-card"></i>
-							<input type="text" name="CC" class="form-control" minlength="8" maxlength="11" required>
+							<input type="text" name="CC" class="form-control" minlegth="7" maxlength="12" onkeypress="return Numeros(event)" onpaste="return false" required>
 							<div class="valid-feedback">¡Ok válido!</div>
 							<div class="invalid-feedback">Complete el campo.</div> 
 						</div>

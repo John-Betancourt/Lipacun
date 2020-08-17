@@ -91,9 +91,11 @@
 						</div>
 						<div class="form-group col-md-6">
 							<label for="Apellidos"><strong>Apellidos:</strong></label>
-                            <input type="text" name="Apellidos" class="form-control" maxlength="20" onkeypress="return Alfabetico(event)" onpaste="return false" required>						</div>
+							<span style= "color: red">*</span>
+                            <input type="text" name="Apellidos" class="form-control" maxlength="20" onkeypress="return Alfabetico(event)" onpaste="return false" required>
                             <div class="valid-feedback">¡Ok válido!</div>
 							<div class="invalid-feedback">Complete el campo.</div>
+						</div>
 					</div>
 
 					<div class="form-row">
@@ -101,7 +103,7 @@
 							<label for="Identificacion"><strong>Número de Identificación:</strong></label>
 							<span style= "color: red">*</span>
                             <i class="far fa-address-card"></i>
-                            <input type="text" name="CC" class="form-control" maxlength="12" required>
+                            <input type="text" name="CC" class="form-control" minlegth="7" maxlength="12" onkeypress="return Numeros(event)" onpaste="return false" required>
                             <div class="valid-feedback">¡Ok válido!</div>
                       		<div class="invalid-feedback">Complete el campo.</div> 
 						</div>
@@ -125,7 +127,7 @@
 							<label for="Telefono"><strong>Teléfono o Celular:</strong></label>
 							<span style= "color: red">*</span>
                             <i class="fas fa-mobile-alt"></i>
-                            <input type="number" name="Telefono" class="form-control" minlegth="7" maxlength="10" onkeypress="return Numeros(event)" onpaste="return false" required>
+                            <input type="text" name="Telefono" class="form-control" minlegth="7" maxlength="10" onkeypress="return Numeros(event)" onpaste="return false" required>
                             <div class="valid-feedback">¡Ok válido!</div>
                       		<div class="invalid-feedback">Complete el campo.</div> 
 						</div>
