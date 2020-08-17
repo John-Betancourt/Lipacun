@@ -29,7 +29,7 @@
 				<h3 class="text-uppercase">Esta Sección estará funcionando muy pronto.</h3>
                 <!--p class="text-muted m-t-30 m-b-30">Parece que tenemos problemas al cargar la página solicitada</p--><br><br/><p></p><br><br/><p></p><br><br/><p></p>
                 <!--a href="Administrador" class="btn btn-info btn-rounded waves-effect waves-light m-b-40">Regresar a la página principal</a-->
-				<button class="btn btn-info btn-rounded waves-effect waves-light m-b-40" onclick="history.back()">Regresar a la página anterior</button>
+				<button class="btn btn-primary btn-rounded waves-effect waves-light m-b-40" onclick="history.back()">Regresar a la página anterior</button>
 			</div>
         </div>
 		</center>
