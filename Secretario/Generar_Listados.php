@@ -36,7 +36,7 @@
 	
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-12">
+				<div class="col-md-12">
 					<div class="justify-content-end align-items-center"><!--d-flex -->
 						<ol class="breadcrumb">
 							<li class="breadcrumb-item"><a href="Index.php">Pagina Principal</a></li>
@@ -48,73 +48,77 @@
 							<b><center>Generar listado evento: <?php echo $Evento; ?></center></b>
 						</h5>
 							<div class="card-body">
-								<p style="text-align: top;font-weight: bold;font-style: italic;margin: 0.0em 2.0em;">
-									Filtros:
-								</p><br>
-								<form class="form-inline">
-									<div class="form-group col-md-1 mb-2">	
-										<label>Patin:</label>
-									</div>
-									<div class="form-group col-md-3 mb-2">
-										<select class="form-control col-md-12" id="Patin" onChange="LlenarTablaListados('<?php echo $Evento?>')">
-											<option value="0"> - Seleccione - </option>
-											<?php
-												if($Tipo_Evento=="Escuelas"){
-												$sql="SELECT * FROM tipo_patin WHERE tipo_patin = 'Semiprofesional' OR tipo_patin = 'Profesional No Avanzado' ORDER BY tipo_patin DESC";
-											}else if($Tipo_Evento=="Ranking"){
-												$sql="SELECT * FROM tipo_patin WHERE tipo_patin = 'Profesional Avanzado'";
-											}
-												$resultado=$mysqli->query($sql);
 
-												while($valores= $resultado->fetch_assoc()){
-													echo '<option value="'.$valores['tipo_patin'].'">'.$valores['tipo_patin'].'</option>'; 
+								<div class="text-left">
+									<div class="form-group col-md-12">
+										<label for="Mensaje1"><h3><em>Filtros:</em></h3></label>
+									</div>
+								</div>
+
+								<form>
+  									<div class="form-row">
+  										<div class="form-group col-md-4">
+  											<label for="Patin">Patin:</label>
+											<select class="form-control" id="Patin" onChange="LlenarTablaListados('<?php echo $Evento?>')">
+												<option value="0"> - Seleccione - </option>
+												<?php
+													if($Tipo_Evento=="Escuelas"){
+													$sql="SELECT * FROM tipo_patin WHERE tipo_patin = 'Semiprofesional' OR tipo_patin = 'Profesional No Avanzado' ORDER BY tipo_patin DESC";
+												}else if($Tipo_Evento=="Ranking"){
+													$sql="SELECT * FROM tipo_patin WHERE tipo_patin = 'Profesional Avanzado'";
 												}
-											?>
-										</select>
-									</div>
-								
-									<div class="form-group col-md-1 mb-2">	
-										<label>Rama:</label>
-									</div>
-									<div class="form-group col-md-3 mb-2">
-										<select class="form-control col-md-12" id="ListaRama" onChange="LlenarTablaListados('<?php echo $Evento?>')">
-											<option value="0"> - Seleccione - </option>
-											<?php 
+													$resultado=$mysqli->query($sql);
 
-												$sql="SELECT * FROM rama";
-												$resultado=$mysqli->query($sql);
+													while($valores= $resultado->fetch_assoc()){
+														echo '<option value="'.$valores['tipo_patin'].'">'.$valores['tipo_patin'].'</option>'; 
+													}
+												?>
+											</select>
+										</div>
 
-												while($valores= $resultado->fetch_assoc()){
-													echo '<option value="'.$valores['id'].'">'.$valores['rama'].'</option>'; 
-												}
-											?>&nbsp;&nbsp;
-										</select>
-									</div>
+										<div class="form-group col-md-4">
+											<label for="Rama">Rama:</label>
+											<select class="form-control" id="ListaRama" onChange="LlenarTablaListados('<?php echo $Evento?>')">
+												<option value="0"> - Seleccione - </option>
+												<?php 
 
-									<div class="form-group col-lg-1 mb-2">	
-										<label>Categoria:</label>
-									</div>	
-									<div class="form-group col-md-3 mb-2">
-										<select class="form-control col-md-12" id="ListaCategoria" onChange="LlenarTablaListados('<?php echo $Evento?>')">
-											<option value="0"> - Seleccione - </option>
-											<?php 
-												$sql="SELECT * FROM categoria";
-												$resultado=$mysqli->query($sql);
+													$sql="SELECT * FROM rama";
+													$resultado=$mysqli->query($sql);
 
-												while($valores= $resultado->fetch_assoc()){
-													echo '<option value="'.$valores['categoria'].'">'.$valores['detalles'].'</option>'; 
-												}
-											?>
-										</select>
+													while($valores= $resultado->fetch_assoc()){
+														echo '<option value="'.$valores['id'].'">'.$valores['rama'].'</option>'; 
+													}
+												?>
+											</select>
+										</div>
+
+										<div class="form-group col-md-4">
+											<label for="Categoria">Categoria:</label>
+											<select class="form-control" id="ListaCategoria" onChange="LlenarTablaListados('<?php echo $Evento?>')">
+												<option value="0"> - Seleccione - </option>
+												<?php 
+													$sql="SELECT * FROM categoria";
+													$resultado=$mysqli->query($sql);
+
+													while($valores= $resultado->fetch_assoc()){
+														echo '<option value="'.$valores['categoria'].'">'.$valores['detalles'].'</option>'; 
+													}
+												?>
+											</select>
+										</div>
 									</div>
 								</form><br>
-								<p style="text-align: top;font-weight: bold;font-style: italic;margin: 0.0em 2.0em;">
-									Datos para guardar listado:
-								</p>
+
+								<div class="text-left">
+									<div class="form-group col-md-12">
+										<label for="Mensaje1"><h3><em>Datos para guardar listado:</em></h3></label>
+									</div>
+								</div>
+
 								<form>
-									<div class="form-group row col-md-12">
-										<label for="competencia" class="col-lg-2 mb-3 col-form-label" style="text-align: center">Competencia:</label>
-										<div class="form-group col-lg-4">
+									<div class="form-row">
+										<div class="form-group col-md-6">
+											<label for="competencia">Competencia:</label>
 											<!--input type="text" class="form-control" id="competencia" name="competencia" placeholder="Ingrese nombre competencia" onChange="Titulo()" required-->
 											<select class="form-control" id="competencia" name="competencia" onChange="LlenarTablaListados('<?php echo $Evento?>')" required>
 												<option value="0"> - Seleccione - </option>
@@ -126,8 +130,9 @@
 												<option value="Libre">Prueba Libre</option>
 											</select>
 										</div>
-										<label for="tipoComp" class="col-lg-2 mb-3 col-form-label" style="text-align: center">Tipo Competencia:</label>
-										<div class="form-group col-lg-4">
+
+										<div class="form-group col-md-6">
+											<label for="tipoComp">Tipo Competencia:</label>
 											<input type="text" class="TipoComp1 form-control" id="tipoComp" name="tipoComp" placeholder="Ingrese tipo competencia" onChange="Titulo()" required>
 											<select class="TipoComp2 form-control" id="tipoComp2" name="tipoComp2" onChange="Titulo()" style="display:none" required>
 												<option value="0"> - Seleccione - </option>
@@ -136,27 +141,33 @@
 												<option value="Vuelta al Circuito">Vuelta al Circuito</option>
 											</select>
 										</div>
-									</div>
-									<p style="text-align: top;font-weight: bold;font-style: italic;margin: 0.0em 2.0em;">
-										Cantidad Premiaciones:
-									</p><br>
-									<div class="form-group row col-md-12">
-										<label for="oro" class="col-lg-1 mb-3 col-form-label" style="text-align: center">Oro:</label>
-										<div class="form-group col-lg-3">
-											<input type="number" class="form-control" id="oro" name="oro" placeholder="Oros" step="1" required>
+									</div><br>
+
+									<div class="text-left">
+										<div class="form-group col-md-12">
+											<label for="Mensaje1"><h3><em>Cantidad premiaciones:</em></h3></label>
 										</div>
-										<label for="plata" class="col-lg-1 mb-3 col-form-label" style="text-align: center">Plata:</label>
-										<div class="form-group col-lg-3">
+									</div>
+
+									<div class="form-row">
+										<div class="form-group col-md-4">
+											<label for="oro">Oro: <img src="../imagenes/favicon/gold_medal.ico" alt="oro" style="width: 20px; height:20px"></label>
+											<input type="number" class="form-control" id="oro" name="oro" placeholder="Oro" step="1" required>
+										</div>	
+
+										<div class="form-group col-md-4">
+											<label for="plata">Plata: <img src="../imagenes/favicon/silver_medal.ico" alt="plata" style="width: 20px; height:20px"></label>
 											<input type="text" class="form-control" id="plata" name="plata" placeholder="Plata" required>
 										</div>
-										<label for="bronce" class="col-lg-1 mb-3 col-form-label" style="text-align: center">Bronce:</label>
-										<div class="form-group col-lg-3">
+
+										<div class="form-group col-md-4">
+											<label for="bronce">Bronce: <img src="../imagenes/favicon/bronze_medal.ico" alt="bronce" style="width: 20px; height:20px"></label>
 											<input type="text" class="form-control" id="bronce" name="bronce" placeholder="Bronce" required>
 										</div>
-									</div>
-									<div class="form-group">
-										<div class="col-sm-12">&nbsp;
-											<button type="button" id="GuardarListado" class="btn btn-primary">Guardar Listado</button>
+									</div><br>
+									<div class="form-row">
+										<div class="form-group">
+											<button type="button" id="GuardarListado" class="btn btn-primary"><i class="far fa-save"></i> Guardar Listado</button>
 										</div>
 									</div>
 								</form>
@@ -172,18 +183,14 @@
 			<br><br/>
 		</div>
 		<br><br/>
-		<!-- ============================================================== -->
         <!-- footer -->
-        <!-- ============================================================== -->
-		<div class="footer2">
-			<footer>Bienvenido <?php echo $row['Rol'] ?> <button class="fas"><i class="fas fa-user-alt"></i></button>&nbsp; &nbsp; &nbsp;
+		<!-- <div class="footer2">
+			<footer>Bienvenido <!?php echo $row['Rol'] ?> <button class="fas"><i class="fas fa-user-alt"></i></button>&nbsp; &nbsp; &nbsp;
                 <a href="../Logout.php"><button class="btn btn-info">Cerrar Sesión</button></a>
 				<a href="Index.php"><button class="btn btn-info">Volver</button></a>
             </footer>
-		</div>
-		<!-- ============================================================== -->
+		</div> -->
         <!-- End footer -->
-        <!-- ============================================================== -->
 	</center>
 </body>
 </html>
