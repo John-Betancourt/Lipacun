@@ -264,15 +264,22 @@ $(document).ready(function(){
 			codigo_sql = "SELECT * FROM "+NombreTablabd+" WHERE evento = '"+evento+"'";
 			$('#Listado').val(mensaje);
 			if(TipoCompetencia==0){
-				if(TipoPatin==0){
-					alertify.error("Porporcione un tipo de patin valido");
-					alertify.error("Porporcione una competencia valida");
-				}else{
-					alertify.error("Porporcione una competencia valida");
+				if(Cat==0){
+					if(idRama==0){
+						if(TipoPatin==0){
+							alertify.error("Selecione un tipo de patin");
+						}else{
+							alertify.error("Seleccione una rama");
+						}
+					}else{
+						alertify.error("Seleccione una categoria");
+					}
+				}else {
+					alertify.error("Seleccione una competencia");
 				}
 			}else{
-				if(TipoPatin==0){
-					alertify.error("Porporcione un tipo de patin valido");
+				if(TCompetencia==0 || TCompetencia==''){
+					alertify.error("Seleccione un tipo de competencia");
 				}else{
 					$.ajax({
 						type: "POST",
