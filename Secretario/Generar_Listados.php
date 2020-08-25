@@ -274,7 +274,7 @@ $(document).ready(function(){
 					}else{
 						alertify.error("Seleccione una categoria");
 					}
-				}else {
+				}else{
 					alertify.error("Seleccione una competencia");
 				}
 			}else{
