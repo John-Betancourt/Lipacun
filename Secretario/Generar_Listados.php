@@ -106,8 +106,7 @@
 												?>
 											</select>
 										</div>
-									</div>
-								</form><br>
+									</div><br>
 
 								<div class="text-left">
 									<div class="form-group col-md-12">
@@ -115,7 +114,6 @@
 									</div>
 								</div>
 
-								<form>
 									<div class="form-row">
 										<div class="form-group col-md-6">
 											<label for="competencia"><strong>Competencia:</strong></label>
