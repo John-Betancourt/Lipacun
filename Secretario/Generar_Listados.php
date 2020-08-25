@@ -261,23 +261,35 @@ $(document).ready(function(){
 			var mensaje = Competencia + ' ' + TipoComp + '  ' + Patin + '  ' + Rama + ' ' + Categoria ;
 			codigo_sql = "SELECT * FROM "+NombreTablabd+" WHERE evento = '"+evento+"'";
 			$('#Listado').val(mensaje);
-			if(TipoCompetencia==0){
-				if(Cat==0){
-					if(idRama==0){
-						if(TipoPatin==0){
-							alertify.error("Selecione un tipo de patin");
+			if(Plata==''){
+				if(Oro==''){
+					if(TCompetencia==0 || TCompetencia==''){
+						if(TipoCompetencia==0){
+							if(Cat==0){
+								if(idRama==0){
+									if(TipoPatin==0){
+										alertify.error("Selecione un tipo de patin");
+									}else{
+										alertify.error("Seleccione una rama");
+									}
+								}else{
+									alertify.error("Seleccione una categoria");
+								}
+							}else{
+								alertify.error("Seleccione una competencia");
+							}
 						}else{
-							alertify.error("Seleccione una rama");
+							alertify.error("Seleccione un tipo de competencia");
 						}
 					}else{
-						alertify.error("Seleccione una categoria");
+						alertify.error("Por favor digite la cantidad de oros");
 					}
 				}else{
-					alertify.error("Seleccione una competencia");
+					alertify.error("Por favor digite la cantidad de platas");
 				}
 			}else{
-				if(TCompetencia==0 || TCompetencia==''){
-					alertify.error("Seleccione un tipo de competencia");
+				if(Bronce==''){
+					alertify.error("Por favor digite la cantidad de bronces");
 				}else{
 					$.ajax({
 						type: "POST",
