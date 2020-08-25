@@ -58,7 +58,7 @@
 								<form>
   									<div class="form-row">
   										<div class="form-group col-md-4">
-  											<label for="Patin">Patin:</label>
+  											<label for="Patin"><strong>Patin:</strong> </label>
 											<select class="form-control" id="Patin" onChange="LlenarTablaListados('<?php echo $Evento?>')">
 												<option value="0"> - Seleccione - </option>
 												<?php
@@ -77,7 +77,7 @@
 										</div>
 
 										<div class="form-group col-md-4">
-											<label for="Rama">Rama:</label>
+											<label for="Rama"><strong>Rama:</strong></label>
 											<select class="form-control" id="ListaRama" onChange="LlenarTablaListados('<?php echo $Evento?>')">
 												<option value="0"> - Seleccione - </option>
 												<?php 
@@ -93,7 +93,7 @@
 										</div>
 
 										<div class="form-group col-md-4">
-											<label for="Categoria">Categoria:</label>
+											<label for="Categoria"><strong>Categoria:</strong></label>
 											<select class="form-control" id="ListaCategoria" onChange="LlenarTablaListados('<?php echo $Evento?>')">
 												<option value="0"> - Seleccione - </option>
 												<?php 
@@ -118,7 +118,7 @@
 								<form>
 									<div class="form-row">
 										<div class="form-group col-md-6">
-											<label for="competencia">Competencia:</label>
+											<label for="competencia"><strong>Competencia:</strong></label>
 											<!--input type="text" class="form-control" id="competencia" name="competencia" placeholder="Ingrese nombre competencia" onChange="Titulo()" required-->
 											<select class="form-control" id="competencia" name="competencia" onChange="LlenarTablaListados('<?php echo $Evento?>')" required>
 												<option value="0"> - Seleccione - </option>
@@ -132,7 +132,7 @@
 										</div>
 
 										<div class="form-group col-md-6">
-											<label for="tipoComp">Tipo Competencia:</label>
+											<label for="tipoComp"><strong>Tipo Competencia:</strong></label>
 											<input type="text" class="TipoComp1 form-control" id="tipoComp" name="tipoComp" placeholder="Ingrese tipo competencia" onChange="Titulo()" required>
 											<select class="TipoComp2 form-control" id="tipoComp2" name="tipoComp2" onChange="Titulo()" style="display:none" required>
 												<option value="0"> - Seleccione - </option>
@@ -151,17 +151,17 @@
 
 									<div class="form-row">
 										<div class="form-group col-md-4">
-											<label for="oro">Oro: <img src="../imagenes/favicon/gold_medal.ico" alt="oro" style="width: 20px; height:20px"></label>
+											<label for="oro"><strong>Oro:</strong> <img src="../imagenes/favicon/gold_medal.ico" alt="oro" style="width: 20px; height:20px"></label>
 											<input type="number" class="form-control" id="oro" name="oro" placeholder="Oro" step="1" required>
 										</div>	
 
 										<div class="form-group col-md-4">
-											<label for="plata">Plata: <img src="../imagenes/favicon/silver_medal.ico" alt="plata" style="width: 20px; height:20px"></label>
+											<label for="plata"><strong>Plata:</strong> <img src="../imagenes/favicon/silver_medal.ico" alt="plata" style="width: 20px; height:20px"></label>
 											<input type="text" class="form-control" id="plata" name="plata" placeholder="Plata" required>
 										</div>
 
 										<div class="form-group col-md-4">
-											<label for="bronce">Bronce: <img src="../imagenes/favicon/bronze_medal.ico" alt="bronce" style="width: 20px; height:20px"></label>
+											<label for="bronce"><strong>Bronce:</strong> <img src="../imagenes/favicon/bronze_medal.ico" alt="bronce" style="width: 20px; height:20px"></label>
 											<input type="text" class="form-control" id="bronce" name="bronce" placeholder="Bronce" required>
 										</div>
 									</div><br>
