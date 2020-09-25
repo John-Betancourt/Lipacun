@@ -38,7 +38,7 @@
 					  </h5>
 					  <div class="card-body">
 						<div class="tabla">
-							<table class="table table-hover table-striped table-bordered"  id="idDataTable" data-page-length="25"><!--table table-hover table-condensed table-bordered-->
+							<table class="table table-hover table-striped table-bordered"  id="idDataTable" data-page-length="50"><!--table table-hover table-condensed table-bordered-->
 								<thead style="background-color: #007bff; color: white; font-weight: bold;">
 								  <tr>
 									<th class="th-sm"><center>#</center></th>

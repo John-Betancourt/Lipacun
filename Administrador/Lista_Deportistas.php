@@ -108,7 +108,7 @@ function auto_copyright($startYear = null) {
 
 <script type="text/javascript">
 	function BajaDeportista(id){
-		alertify.confirm('Advertencia','¿Esta seguro de dar baja al deportista con el número de identificación: "'+id+'"? para confirmar presione continuar.',function(){
+		alertify.confirm('Advertencia - Deportista Activo','¿Esta seguro de dar baja al deportista con el número de identificación: "'+id+'"? para confirmar presione continuar.',function(){
 			$.ajax({
 				type:"POST",
 				data:"id="+id,
@@ -119,6 +119,44 @@ function auto_copyright($startYear = null) {
 					}else if(r==1){
 						$('#tablaDeportistas').load('Tabla_Deportistas.php');
 						alertify.success("Se ha dado de baja al deportista.");
+					}
+				}
+			});
+		},function(){
+			alertify.error('Cancelado');
+		}).set({labels:{ok:'Continuar', cancel:'Cancelar'}});
+	}
+	function ActivarDeportistaInactivo(id){
+		alertify.confirm('Advertencia - Deportista Inactivo','¿Esta seguro de habilitar al deportista con el número de identificación: "'+id+'"? para confirmar presione continuar.',function(){
+			$.ajax({
+				type:"POST",
+				data:"id="+id,
+				url:"../procesos/Deportista_Activar.php",
+				success:function(r){
+					if(r==0){
+						alertify.error("ERROR PRESENTADO - No se ha podido habilitar el deportista, por favor intente nuevamente.");
+					}else if(r==1){
+						$('#tablaDeportistas').load('Tabla_Deportistas.php');
+						alertify.success("Se ha habilidado al deportista.");
+					}
+				}
+			});
+		},function(){
+			alertify.error('Cancelado');
+		}).set({labels:{ok:'Continuar', cancel:'Cancelar'}});
+	}
+	function ActivarDeportistaBaja(id){
+		alertify.confirm('Advertencia - Deportista De Baja','¿Esta seguro de habilitar al deportista con el número de identificación: "'+id+'"? para confirmar presione continuar.',function(){
+			$.ajax({
+				type:"POST",
+				data:"id="+id,
+				url:"../procesos/Deportista_Activar.php",
+				success:function(r){
+					if(r==0){
+						alertify.error("ERROR PRESENTADO - No se ha podido habilitar el deportista, por favor intente nuevamente.");
+					}else if(r==1){
+						$('#tablaDeportistas').load('Tabla_Deportistas.php');
+						alertify.success("Se ha habilidado al deportista.");
 					}
 				}
 			});
