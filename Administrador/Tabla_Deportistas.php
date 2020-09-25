@@ -33,11 +33,6 @@
 			$result=$mysqli->query($sql);
 			while($row=$result->fetch_assoc()){
 				$identificacion = $row['identificacion'];
-				/*$sql = "SELECT * FROM numero_deportistas WHERE identificacion_deportista = '$identificacion'";
-				$result1=$mysqli->query($sql);
-				$rows = $result1->num_rows;*/
-				//if($rows > 0){
-				//while($row1=$result1->fetch_assoc()){
 		?>
 				<tr>
 					<td><center><?php echo $No?></center></td>
@@ -45,7 +40,6 @@
 					<td><?php $Nombres = $row['primer_nombre'].' '.$row['segundo_nombre']; echo $Nombres ?></td>
 					<td><?php $Apellidos = $row['primer_apellido'].' '.$row['segundo_apellido']; echo $Apellidos ?></td>
 					<td><center><?php echo $row['edad'] ?></center></td>
-					<!--td><center><a href="#" onClick="BajaDeportista('<?php echo $row['identificacion'] ?>')"><span class="label label-danger">Dar Baja</span></a></center></td-->
 					<td><center><?php
 						$estado = $row['estado'];
 						if($estado == 1){ ?>
@@ -61,21 +55,6 @@
 				</tr>
 			<?php
 				$No +=1;
-					//}
-				/*}else{
-			?>
-				<tr>
-					<td><center><?php echo $No ?></center></td>
-					<td><?php echo $identificacion ?></td>
-					<td><?php $Nombres = $row['primer_nombre'].' '.$row['segundo_nombre']; echo $Nombres ?></td>
-					<td><?php $Apellidos = $row['primer_apellido'].' '.$row['segundo_apellido']; echo $Apellidos ?></td>
-					<td><center><?php echo $row['edad'] ?></center></td>
-					<td><center><a href="#" onClick="BajaDeportista('<?php echo $row['identificacion'] ?>')"><span class="label label-danger">Dar Baja</span></a></center></td>
-					<td><center><a href="Informacion_Deportista.php?Deportista=<?php echo $row['identificacion'] ?>"><span class="label label-primary">Ver</span></a></center></td>
-				</tr>
-			<?php
-				$No +=1;
-				}*/
 			}
 		?>
 		</tbody>

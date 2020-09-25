@@ -7,7 +7,7 @@
 	}
 
 	if(!empty($_POST['id'])){
-		//recibir los datos del formulario editar evento
+		//recibir los datos de administracion de deportistas
 		$identificacion=$_POST['id'];
 		$fecha_estado= date("Y-m-d");
     	$activo	  = 1;
@@ -15,9 +15,9 @@
 		$query="UPDATE `deportistas` SET `fecha_estado` = '$fecha_estado', `estado` = '$activo' WHERE `identificacion` = '$identificacion'";
 		$result=$mysqli->query($query);
 		if($result){
-			echo 1; //Se ha dado de baja al Club y/o Escuela correctamente.
+			echo 1; //Se ha habilitado al deportista del Club y/o Escuela correctamente.
 		} else {
-			echo 0; //ERROR PRESENTADO - No se ha podido dar de baja al Club y/o Escuela, por favor intente nuevamente.
+			echo 0; //ERROR PRESENTADO - No se ha podido habilitar el deportista del Club y/o Escuela, por favor intente nuevamente.
 		}
 	}
 ?>
