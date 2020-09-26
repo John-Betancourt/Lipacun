@@ -54,7 +54,7 @@
 								<?php
 									$No=1;
 									$fecha_actual = date("Y-m-d");
-									$sql = "SELECT * FROM eventos WHERE fecha_evento <='$fecha_actual' ORDER BY fecha_evento ASC";
+									$sql = "SELECT * FROM eventos WHERE fecha_evento >= '$fecha_actual' ORDER BY fecha_evento ASC";
 									$result=$mysqli->query($sql);
 									while($row=$result->fetch_assoc()){
 										$query = "SELECT municipio FROM municipios WHERE id_municipio = '".$row['municipio']."'";
