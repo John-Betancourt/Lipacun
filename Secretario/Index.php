@@ -85,9 +85,18 @@
 													<td><?php echo $row['nombre'] ?></td>
 													<td><center><?php echo $fila['municipio'] ?></center></td>
 													<td><center><?php echo $row['fecha_evento'] ?></center></td>
-													<td><center><a href="Generar_Listados.php?Evento=<?php echo $row['nombre']; ?>"><span class="label label-primary">Generar listados</span></a></center></td>
-													<td><center><a href="Competencias.php?Evento=<?php echo $row['nombre']; ?>"><span class="label label-primary">Subir resultados</span></a></center></td>
-													<!--td><center><a href="Resultados.php?Evento=<?php //echo $row['nombre']; ?>"><span class="label label-primary">Subir resultados</span></a></center></td-->
+													<td><center><a href="Generar_Listados.php?Evento=<?php echo $row['nombre']; ?>"><button class="label label-primary">Generar listados</button></a></center></td>
+													<td><center><a href="Competencias.php?Evento=<?php echo $row['nombre']; ?>"><button class="label label-primary">Subir resultados</button></a></center></td>
+												</tr> <?php
+											}else{ ?>
+												<tr>
+													<td><center><?php echo $No ?></center></td>
+													<td><?php echo $row['nombre'] ?></td>
+													<td><center><?php echo $fila['municipio'] ?></center></td>
+													<td><center><?php echo $row['fecha_evento'] ?></center></td>
+													<td><center><a href="Listados.php?Evento=<?php echo $row['nombre']; ?>"><button class="label label-primary">Listar Resultados</button></a></center></td>
+													<td><center><a href="Competencias.php?Evento=<?php echo $row['nombre']; ?>" disabled><button class="label label-primary" disabled>Subir resultados</button></a></center></td>
+													
 												</tr> <?php
 											}
 										$No +=1;
