@@ -39,7 +39,7 @@ require '../librerias/PHPMailer/SMTP.php';
 	$salt		= '$Lip@cun&';
     $password_encry=md5($salt . $password);
 	//$password_encry	= md5($password);
-	$localIP	= gethostbyname(trim('LAPTOP-VMEDQHB1'));//LAPTOP-VMEDQHB1
+	$localIP	= gethostbyname(trim('LAPTOP-VMEDQHB1'));//LAPTOP-VMEDQHB1 | DESKTOP-LR3G8IQ
 	$Nombre_corto_sin_espacios =str_replace(' ', '%20', $Nombre_corto_lashes);
 	$url		= 'http://'.$localIP.'/Lipacun/Restablecer_Contraseña.php?Token='.$token.'&Club='.$Nombre_corto_sin_espacios;
 
@@ -59,7 +59,7 @@ require '../librerias/PHPMailer/SMTP.php';
 					$mail->isSMTP();											// Send using SMTP
 					$mail->Host       = 'smtp.gmail.com';						// Set the SMTP server to send through
 					$mail->SMTPAuth   = true;									// Enable SMTP authentication
-					$mail->Username   = 'bdavidlozano@gmail.com';				// SMTP username
+					$mail->Username   = 'jobeher2000@gmail.com';				// SMTP username    | bdavidlozano@gmail.com | jobeher2000@gmail.com
 					$mail->Password   = 'dep7362@fu';							// SMTP password
 					$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;			// Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
 					$mail->Port       = 587;									// TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
@@ -67,10 +67,10 @@ require '../librerias/PHPMailer/SMTP.php';
 
 
 					//Recipients
-					$mail->setFrom('bdavidlozano@gmail.com', 'Brian');
-					$mail->addAddress($email);								// Add a recipientn
+					$mail->setFrom('noreply@lipacun.com', 'NoReply Email-Lipacun');
+					$mail->addAddress($email);									// Add a recipientn
 
-					$mail->isHTML(true);                                  // Set email format to HTML
+					$mail->isHTML(true);										// Set email format to HTML
 					$mail->Subject = $asunto;
 					$mail->Body    = '<h3>¡El proceso de validación del Club y/o Escuela ha culminado exitosamente!</h3>
 
