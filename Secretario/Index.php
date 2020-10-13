@@ -68,10 +68,7 @@
 								</thead>
 								<tbody>
 								<?php
-									$No = 1;
-									$dia = date("d");
-									$diaevento = $dia + 1;
-									$fechaevento = date("Y-m")."-".$diaevento;
+									$No=1;
 									$sql = "SELECT * FROM eventos ORDER BY fecha_evento DESC";
 									$result=$mysqli->query($sql);
 									while($row=$result->fetch_assoc()){
