@@ -42,7 +42,6 @@
     } 
     $Nombre_corto=$_POST['Nombre_corto'];
     $Direccion=$_POST['Direccion'];
-    $fecha_inscripcion=date("Y-m-d");
 	  $estado='3';
 
     $check_Nombre_query="select * from clubes where nombre_completo_club='$Nombre'";
@@ -60,9 +59,9 @@
       $response['type_response'] = 0;
     }else{
     if ($Reconocimiento==1) {//reconocimiento = si
-      $query="insert INTO `clubes` (`departamento`, `municipio`, `nombre_completo_club`, `nombres`, `apellidos`, `identificacion`, `cargo`, `telefono`, `email`, `reconocimiento`, `no_reconocimiento`, `fecha_reconocimiento`, `nombre_corto_club`, `direccion`, `fecha_inscripcion`, `estado`) VALUES ('$Departamentos', '$Ciudad', '$Nombre', '$Nombres', '$Apellidos', '$CC', '$Cargo', '$Telefono', '$Email', '$Reconocimiento', '$No_reconocimiento', '$Fecha_reconocimiento', '$Nombre_corto', '$Direccion', '$fecha_inscripcion', '$estado')";
+      $query="insert INTO `clubes` (`departamento`, `municipio`, `nombre_completo_club`, `nombres`, `apellidos`, `identificacion`, `cargo`, `telefono`, `email`, `reconocimiento`, `no_reconocimiento`, `fecha_reconocimiento`, `nombre_corto_club`, `direccion`, `estado`) VALUES ('$Departamentos', '$Ciudad', '$Nombre', '$Nombres', '$Apellidos', '$CC', '$Cargo', '$Telefono', '$Email', '$Reconocimiento', '$No_reconocimiento', '$Fecha_reconocimiento', '$Nombre_corto', '$Direccion', '$estado')";
     } else {//reconocimiento = no
-      $query="insert INTO `clubes` (`departamento`, `municipio`, `nombre_completo_club`, `nombres`, `apellidos`, `identificacion`, `cargo`, `telefono`, `email`, `reconocimiento`, `nombre_corto_club`, `direccion`, `fecha_inscripcion`, `estado`) VALUES ('$Departamentos', '$Ciudad', '$Nombre', '$Nombres', '$Apellidos', '$CC', '$Cargo', '$Telefono', '$Email', '$Reconocimiento', '$Nombre_corto', '$Direccion', '$fecha_inscripcion', '$estado')";
+      $query="insert INTO `clubes` (`departamento`, `municipio`, `nombre_completo_club`, `nombres`, `apellidos`, `identificacion`, `cargo`, `telefono`, `email`, `reconocimiento`, `nombre_corto_club`, `direccion`, `estado`) VALUES ('$Departamentos', '$Ciudad', '$Nombre', '$Nombres', '$Apellidos', '$CC', '$Cargo', '$Telefono', '$Email', '$Reconocimiento', '$Nombre_corto', '$Direccion', '$estado')";
     }
       $result=$mysqli->query($query);
       if ($result) {
