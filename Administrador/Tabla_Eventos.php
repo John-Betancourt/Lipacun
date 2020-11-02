@@ -36,7 +36,7 @@
 				$Evento = $row['nombre'];
 		?>
 			<tr>
-				<td><center><?php echo $No ?></center></td>
+				<td><center><?php echo $row['id'] ?></center></td>
 				<td><?php echo $Evento ?></td>
 				<td><center><?php echo $fila['municipio'] ?></center></td>
 				<td><center><?php echo $row['fecha_evento'] ?></center></td>
