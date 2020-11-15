@@ -95,7 +95,8 @@
 													<td><center><?php echo $fila['municipio'] ?></center></td>
 													<td><center><?php echo $row['fecha_evento'] ?></center></td>
 													<td><center><a href="Listados.php?Evento=<?php echo $row['nombre']; ?>"><button class="label label-primary">Listar Resultados</button></a></center></td>
-													<td><center><a href="Competencias.php?Evento=<?php echo $row['nombre']; ?>" disabled><button class="label label-primary" disabled>Subir resultados</button></a></center></td>
+													<td><center><button id="btnSubirresultados" class="label label-primary">Subir resultados</button></center></td>
+													<!--td><center><a href="Competencias.php?Evento=<?php //echo $row['nombre']; ?>" disabled><button id="btnSubirresultados" class="label label-primary" disabled>Subir resultados</button></a></center></td-->
 													
 												</tr> <?php
 											}
@@ -156,6 +157,14 @@ function auto_copyright($startYear = null) {
 	}
 }
 ?>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#btnSubirresultados').click(function(){
+			alertify.error("El evento ha finalizado.");
+		});
+	});
+</script>
 
 <script type="text/javascript">
 	$(document).ready(function() {
