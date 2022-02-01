@@ -11,22 +11,12 @@
   $result=$mysqli->query($sql);
   $user = $result->fetch_assoc();
 
-  // Formato 24 horas (de 1 a 24) 
-  $hora = date('G');
-  if (($hora >= 0) AND ($hora < 6)) { 
-    $mensaje = "Buena madrugada, "; 
-  } else if (($hora >= 6) AND ($hora < 12)) { 
-    $mensaje = "Buenos dias, "; 
-  } else if (($hora >= 12) AND ($hora < 18)) { 
-    $mensaje = "Buenas tardes, "; 
-  } else { 
-    $mensaje = "Buenas noches, "; 
-  }
+  $Evento = $_REQUEST['Evento'];
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<title>Lista Eventos | | LIPACUN</title>
+	<title>Listados Evento "<?php echo $Evento ?>"</title>
 	<?php require_once "scripts.php"; ?>
 </head>
 <body>
@@ -40,79 +30,65 @@
 			<img src="../imagenes/iconos/Cundinamarca_logo.webp" alt="Logo" class="logo" height="90">
 		</div><hr>
 		
-		<div class="contenedor">
-	      <div class="admi">
-			<h1><?php echo $mensaje." ".$user['Rol'] ?></h1>
-			</div>
-		</div><br>
-		
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12">
+					<div class="justify-content-end align-items-center"><!--d-flex -->
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="Index.php">Pagina Principal</a></li>
+							<li class="breadcrumb-item active">Listados</li>
+						</ol>
+					</div>
 					<div class="card text-left">
 					  <h5 class="card-header">
-						<b><center>Lista de Eventos</center></b>
+						<b><center>Listados Evento "<?php echo $Evento ?>"</center></b>
 					  </h5>
 					  <div class="card-body">
 						<div class="tabla">
-							<table class="table table-hover table-striped table-bordered" id="idDataTable"><!--table table-hover table-condensed table-bordered-->
+							<table class="table table-hover table-striped table-bordered"  id="idDataTable" data-page-length="25"><!--table table-hover table-condensed table-bordered-->
 								<thead style="background-color: #007bff; color: white; font-weight: bold;">
 								  <tr>
 									<th class="th-sm"><center>#</center></th>
-									<th class="th-sm"><center>Nombre Evento</center></th>
-									<th class="th-sm"><center>Municipio Evento</center></th>
-									<th class="th-sm"><center>Fecha Evento</center></th>
+									<th class="th-sm"><center>Nombre Listado</center></th>
 									<th class="th-sm"><center>Acción</center></th>
-									<th class="th-sm"><center>Subir</center></th>
 								  </tr>
 								</thead>
 								<tbody>
 								<?php
-									$No = 1;
-									$dia = date("d");
-									$diaevento = $dia + 1;
-									$fechaevento = date("Y-m")."-".$diaevento;
-									//$sql = "SELECT * FROM eventos WHERE fecha_evento = '".$ayer."' AND fecha_evento = '".date("Y-m-d")."' ORDER BY fecha_evento DESC";
-									$sql = "SELECT * FROM eventos ORDER BY fecha_evento DESC";
-									$result=$mysqli->query($sql);
+									$No=1;
+									$sql = "SELECT * FROM listados_eventos WHERE evento ='$Evento' AND estado = 'terminado'";
+									$result = $mysqli->query($sql);
 									while($row=$result->fetch_assoc()){
-										$query = "SELECT municipio FROM municipios WHERE id_municipio = '".$row['municipio']."'";
-										$resultado_municipio = $mysqli->query($query);
-										while($fila = $resultado_municipio->fetch_assoc()){
-											if($row['fecha_evento']==$fechaevento or $row['fecha_evento']==date("Y-m-d")){ ?>
-												<tr>
-													<td><center><?php echo $No ?></center></td>
-													<td><?php echo $row['nombre'] ?></td>
-													<td><center><?php echo $fila['municipio'] ?></center></td>
-													<td><center><?php echo $row['fecha_evento'] ?></center></td>
-													<td><center><a href="Generar_Listados.php?Evento=<?php echo $row['nombre']; ?>"><button class="label label-primary">Generar listados</button></a></center></td>
-													<td><center><a href="Competencias.php?Evento=<?php echo $row['nombre']; ?>"><button class="label label-primary">Subir resultados</button></a></center></td>
-												</tr> <?php
-											}else{ ?>
-												<tr>
-													<td><center><?php echo $No ?></center></td>
-													<td><?php echo $row['nombre'] ?></td>
-													<td><center><?php echo $fila['municipio'] ?></center></td>
-													<td><center><?php echo $row['fecha_evento'] ?></center></td>
-													<td><center><a href="Listados.php?Evento=<?php echo $row['nombre']; ?>"><button class="label label-primary">Listar Resultados</button></a></center></td>
-													<td><center><button id="btnSubirresultados" class="label label-primary">Subir resultados</button></center></td>
-													<!--td><center><a href="Competencias.php?Evento=<?php //echo $row['nombre']; ?>" disabled><button id="btnSubirresultados" class="label label-primary" disabled>Subir resultados</button></a></center></td-->
-													
-												</tr> <?php
-											}
+										$id_listado = $row['id'];
+								?>
+									<tr>
+										<td><center><?php echo $No ?></center></td>
+										<td><?php echo $row['nombre_listado'] ?></td>
+										<td><center><a href="Mostrar_Resultados.php?id=<?php echo $id_listado ?>"><span class="label label-primary">Resultados</span></a></center></td>
+									</tr>
+									<?php
 										$No +=1;
-										}
+									}
+									$sql1 = "SELECT * FROM listados_carriles WHERE evento ='$Evento' AND estado = 'Terminado'";
+									$result1 = $mysqli->query($sql1);
+									while($row1=$result1->fetch_assoc()){
+										$id_listado_remates = $row1['id'];
+								?>
+									<tr>
+										<td><center><?php echo $No ?></center></td>
+										<td>Prueba Carriles "<?php echo $row1['nombre_listado'] ?>"</td>
+										<td><center><a href="Resultados_Carriles.php?id=<?php echo $id_listado_remates ?>"><span class="label label-primary">Resultados</span></a></center></td>
+									</tr>
+									<?php
+										$No +=1;
 									}
 								?>
 								</tbody>
 								<tfoot style="background-color: #ccc;color: white; font-weight: bold;">
 									<tr>
 										<th><center>#</center></th>
-										<th><center>Nombre Evento</center></th>
-										<th><center>Municipio Evento</center></th>
-										<th><center>Fecha Evento</center></th>
+										<th><center>Nombre Listado</center></th>
 										<th><center>Acción</center></th>
-										<th><center>Subir</center></th>
 									</tr>
 								</tfoot>
 							</table>
@@ -133,7 +109,7 @@
 		<div class="footer2">
 			<footer>Bienvenido <?php echo $user['Rol'] ?><button class="fas"><i class="fas fa-user-alt"></i></button>&nbsp; &nbsp; &nbsp;
                 <a href="../Logout.php"><button class="btn btn-info">Cerrar Sesión</button></a>
-				<a href="Cambiar_Contraseña.php"><button class="btn btn-info">Cambiar Contraseña</button></a>
+				<button class="btn btn-info" onclick="history.back()">Volver</button>
             </footer>
 		</div>
 		<!-- ============================================================== -->
@@ -159,14 +135,6 @@ function auto_copyright($startYear = null) {
 ?>
 
 <script type="text/javascript">
-	$(document).ready(function(){
-		$('#btnSubirresultados').click(function(){
-			alertify.error("El evento ha finalizado.");
-		});
-	});
-</script>
-
-<script type="text/javascript">
 	$(document).ready(function() {
 		$('#idDataTable').DataTable({
 			language:{
@@ -174,7 +142,7 @@ function auto_copyright($startYear = null) {
                 "sLengthMenu":     "Mostrar _MENU_ registros",
                 "sZeroRecords":    "No se encontraron resultados",
                 //"sEmptyTable":     "Ningún dato disponible en esta tabla =(",
-				"sEmptyTable":     "No hay eventos disponibles actualmente =(",
+				"sEmptyTable":     "No hay resultados del evento disponibles por ahora =(",
                 "sInfo":           "Mostrando del _START_ al _END_ de un total de _TOTAL_ registros",
                 "sInfoEmpty":      "Mostrando del 0 al 0 de un total de 0 registros",
                 "sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
