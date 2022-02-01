@@ -68,25 +68,29 @@
 								</thead>
 								<tbody>
 								<?php
-									$No=1;
+									$No = 1;
+									$dia = date("d");
+									$diaevento = $dia + 1;
+									$fechaevento = date("Y-m")."-".$diaevento;
+									//$sql = "SELECT * FROM eventos WHERE fecha_evento = '".$ayer."' AND fecha_evento = '".date("Y-m-d")."' ORDER BY fecha_evento DESC";
 									$sql = "SELECT * FROM eventos ORDER BY fecha_evento DESC";
 									$result=$mysqli->query($sql);
 									while($row=$result->fetch_assoc()){
 										$query = "SELECT municipio FROM municipios WHERE id_municipio = '".$row['municipio']."'";
 										$resultado_municipio = $mysqli->query($query);
 										while($fila = $resultado_municipio->fetch_assoc()){
-								?>
-									<tr>
-										<td><center><?php echo $No ?></center></td>
-										<td><?php echo $row['nombre'] ?></td>
-										<td><center><?php echo $fila['municipio'] ?></center></td>
-										<td><center><?php echo $row['fecha_evento'] ?></center></td>
-										<td><center><a href="Generar_Listados.php?Evento=<?php echo $row['nombre']; ?>"><span class="label label-primary">Generar listados</span></a></center></td>
-										<td><center><a href="Competencias.php?Evento=<?php echo $row['nombre']; ?>"><span class="label label-primary">Subir resultados</span></a></center></td>
-										<!--td><center><a href="Resultados.php?Evento=<?php echo $row['nombre']; ?>"><span class="label label-primary">Subir resultados</span></a></center></td-->
-									</tr>
-								<?php
-									$No +=1;
+											if($row['fecha_evento']==$fechaevento or $row['fecha_evento']==date("Y-m-d")){ ?>
+												<tr>
+													<td><center><?php echo $No ?></center></td>
+													<td><?php echo $row['nombre'] ?></td>
+													<td><center><?php echo $fila['municipio'] ?></center></td>
+													<td><center><?php echo $row['fecha_evento'] ?></center></td>
+													<td><center><a href="Generar_Listados.php?Evento=<?php echo $row['nombre']; ?>"><span class="label label-primary">Generar listados</span></a></center></td>
+													<td><center><a href="Competencias.php?Evento=<?php echo $row['nombre']; ?>"><span class="label label-primary">Subir resultados</span></a></center></td>
+													<!--td><center><a href="Resultados.php?Evento=<?php //echo $row['nombre']; ?>"><span class="label label-primary">Subir resultados</span></a></center></td-->
+												</tr> <?php
+											}
+										$No +=1;
 										}
 									}
 								?>

@@ -73,20 +73,20 @@
   
           try {
             //Server settings
-            $mail->SMTPDebug = 0;										              // Enable verbose debug output
-            $mail->isSMTP();											                // Send using SMTP
-            $mail->Host       = 'smtp.gmail.com';					        // Set the SMTP server to send through
-            $mail->SMTPAuth   = true;									            // Enable SMTP authentication
-            $mail->Username   = 'bdavidlozano@gmail.com';				  // SMTP username
-            $mail->Password   = 'dep7362@fu';							        // SMTP password
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;	  // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-            $mail->Port       = 587;									            // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
-            $mail->CharSet	  = 'UTF-8';
+            $mail->SMTPDebug = 0;                                 // Enable verbose debug output
+            $mail->isSMTP();                                      // Send using SMTP
+            $mail->Host       = 'smtp.gmail.com';                 // Set the SMTP server to send through
+            $mail->SMTPAuth   = true;                             // Enable SMTP authentication
+            $mail->Username   = 'jobeher2000@gmail.com';          // SMTP username    | bdavidlozano@gmail.com | jobeher2000@gmail.com
+            $mail->Password   = 'dep7362@fu';                     // SMTP password
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;   // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+            $mail->Port       = 587;                              // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+            $mail->CharSet    = 'UTF-8';
   
   
             //Recipients
-            $mail->setFrom('bdavidlozano@gmail.com', 'Brian');
-            $mail->addAddress($Email);								// Add a recipientn
+            $mail->setFrom('noreply@lipacun.com', 'NoReply Email-Lipacun');
+            $mail->addAddress($Email);                            // Add a recipientn
   
             $mail->isHTML(true);                                  // Set email format to HTML
             $mail->Subject = $asunto;
