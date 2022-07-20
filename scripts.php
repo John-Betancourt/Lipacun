@@ -1,7 +1,8 @@
 	
 	<!-- For Resposive Device -->
-	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="Description" content="developers: Brian Lozano, John Betancourt, Category: Plataforma Lipacun">
 
 	<!-- Favicon -->
@@ -13,7 +14,7 @@
 	<!-- preloader style sheet -->
 	<link rel="stylesheet" type="text/css" href="css/preloader.css">
 	<!-- jQuery library -->
-	<script src="librerias/jquery.min.js"></script>
+	<script src="librerias/jquery-3.4.1.js"></script>
 	<!-- Popper JS -->
 	<script src="librerias/bootstrap/popper.min.js"></script>
 	<!-- Bootstrap Latest compiled JavaScript -->
@@ -46,7 +47,7 @@
 	<link rel="stylesheet" type="text/css" href="librerias/alertify/css/themes/bootstrap.css"-->
 
 	<!-- Latest compiled JavaScript -->
-	<!--script src="librerias/jquery-3.6.0.js"></script>
+	<!--script src="librerias/jquery.min.js"></script>
 	<script src="librerias/datatable/jquery.dataTables.min.js"></script>
 	<script src="librerias/datatable/dataTables.bootstrap4.min.js"></script>
 	<script src="librerias/alertify/alertify.js"></script-->

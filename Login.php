@@ -93,11 +93,10 @@
 
 ?>
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" >
 <head>
-	<?php require_once "scripts.php"; ?>
 	<title>Clubs y/o Escuelas de Cundinamarca || Iniciar Sesión</title>
-	
+	<?php require_once "scripts.php"; ?>
 </head>
 <body>
 	<center>
@@ -123,13 +122,13 @@
 
 				  <div class="wrap-input100 validaeinput m-b-26">
 					<label for="Username" class="label-input100">Club y/o Escuela</label>
-					<input class="input100" type="text" id="Username" name="Username" autocomplete="username" placeholder="Ingrese Nombre Corto Club y/o Escuela" required>
+					<input class="input100" type="text" id="Username" name="Username" placeholder="Ingrese Nombre Corto Club y/o Escuela" required>
 					<span class="focus-input100"></span>
 				  </div>
 
 				  <div class="wrap-input100 validte-input m-b-18">
 					<label for="Password" class="label-input100">Contraseña</label>
-					<input class="input100" type="password" id="Password" name="Password" autocomplete="current-password" placeholder="Ingrese Su Contraseña" required>
+					<input class="input100" type="password" id="Password" name="Password" placeholder="Ingrese Su Contraseña" required>
 					<span class="focus-input100"></span>
 				  </div>
 					
